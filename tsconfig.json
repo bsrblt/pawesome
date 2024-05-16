@@ -17,8 +17,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
+      "@emotion/react": ["node_modules/@emotion/react"],
+      "@emotion/styled": ["node_modules/@emotion/styled"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
