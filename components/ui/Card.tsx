@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({ title, imageSrc, description, price }) => {
           alt={title ?? "No Title"}
           className="rounded-t-xl mb-1 border-b-4 border-b-darkpur cursor-pointer hover:shadow-md transition-all duration-300"
           height={200}
-          src={imageSrc}
+          src={imageSrc || "/default-image.png"}
           style={{
             aspectRatio: "600/400",
             objectFit: "cover",
