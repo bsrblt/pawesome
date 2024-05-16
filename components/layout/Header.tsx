@@ -40,7 +40,7 @@ const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
 
 const navLinks = (
   <>
-    <NavLink href="#">Dog</NavLink>
+    <NavLink href="/dog">Dog</NavLink>
     <NavLink href="#">Cat</NavLink>
     <NavLink href="#">Small Pet</NavLink>
     <NavLink href="#">Wet Food</NavLink>
@@ -198,29 +198,29 @@ const Header: React.FC = () => {
   };
 
   //outsideclick
-  const handleOutsideClick = (event: MouseEvent) => {
-    if (navRef.current && !navRef.current.contains(event.target as Node)) {
-      if (showNavMenu) {
-        menuToggler();
-      }
-      if (showAccMenu) {
-        accountToggler();
-      }
-      if (showCart) {
-        cartToggler();
-      }
-      if (showSearch) {
-        searchHandler();
-      }
-    }
-  };
 
   useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        if (showNavMenu) {
+          menuToggler();
+        }
+        if (showAccMenu) {
+          accountToggler();
+        }
+        if (showCart) {
+          cartToggler();
+        }
+        if (showSearch) {
+          searchHandler();
+        }
+      }
+    };
     document.addEventListener("mousedown", handleOutsideClick);
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [handleOutsideClick]);
+  }, [showAccMenu, showNavMenu, showCart, showSearch]);
 
   //smallscreen
   useEffect(() => {
