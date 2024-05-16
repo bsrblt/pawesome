@@ -46,6 +46,8 @@ const config: Config = {
       },
       fontFamily: {
         lobster: "var(--font-lobster)",
+        archivo: "var(--font-archivo)",
+        "archivo-black": "var(--font-archivo-black)",
       },
     },
   },

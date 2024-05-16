@@ -29,7 +29,10 @@ const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <Link href={href} className="text-turq  hover:text-rosy transition-colors">
+    <Link
+      href={href}
+      className="text-turq tracking-wide font-archivo hover:text-rosy transition-colors"
+    >
       {children}
     </Link>
   );

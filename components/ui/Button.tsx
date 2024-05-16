@@ -13,8 +13,12 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ onClick, className, children }) => {
   return (
     <button onClick={onClick} className={className}>
-      <div className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center px-6 py-2.5 rounded-lg text-lemonlight text-md font-semibold justify-center shadow-sh z-10 min-w-[7rem]">
+      <div
+        className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center px-6 py-2.5 rounded-lg text-lemonlight text-md font-semibold justify-center shadow-sh z-10 min-w-[7rem]   active:translate-x-[0.35rem] active:translate-y-[0.35rem]
+    transition-all"
+      >
         <span> {children}</span>
+
         {/* <svg
           className="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
           fill="currentColor"

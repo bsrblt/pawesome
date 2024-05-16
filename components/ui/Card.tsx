@@ -4,7 +4,7 @@ import CardContent from "./CardContent";
 import Link from "next/link";
 
 interface CardProps {
-  title?: string;
+  title?: string | undefined;
   children?: React.ReactNode;
   imageSrc?: string;
   description?: string;
