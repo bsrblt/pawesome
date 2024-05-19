@@ -1,4 +1,8 @@
 import React from "react";
+import xmark from "../../public/xmark.svg";
+import plus from "../../public/plus.svg";
+import minus from "../../public/minus.svg";
+import Image from "next/image";
 
 export const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
   props
@@ -155,4 +159,14 @@ export const MenuIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
   );
+};
+
+export const CloseIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+  return <Image alt="xmark" src={xmark} width={12} />;
+};
+export const PlusIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+  return <Image alt="plus" src={plus} width={12} />;
+};
+export const MinusIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+  return <Image alt="minus" src={minus} width={12} />;
 };

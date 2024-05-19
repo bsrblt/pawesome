@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "components/ui/Card";
 
-const Dog = () => {
+const DryFood = () => {
   return (
     <section className="bg-bermuda py-12 md:py-24 relative">
       <div
@@ -45,4 +45,4 @@ const Dog = () => {
   );
 };
 
-export default Dog;
+export default DryFood;

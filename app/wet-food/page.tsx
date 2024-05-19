@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "components/ui/Card";
 
-const Dog = () => {
+const WetFood = () => {
   return (
     <section className="bg-bermuda py-12 md:py-24 relative">
       <div
@@ -16,9 +16,9 @@ const Dog = () => {
       <div className="container mx-auto px-4 items-center relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <Card
-            imageSrc="/dogfood.jpg"
-            title="Premium Dry Dog Food"
-            description="High-quality protein and essential nutrients for your pup."
+            imageSrc="/wet1.jpg"
+            title="wwwwwwwwww"
+            description="wwwwwwwwwwww."
             price={49.99}
           />
           <Card
@@ -28,15 +28,15 @@ const Dog = () => {
             price={39.99}
           />
           <Card
-            imageSrc="/dogfood3.jpg"
-            title="Puppy Food"
-            description="Specially formulated and highly nutritious for growing puppies."
+            imageSrc="/wet2.jpg"
+            title="wwwwwwwwwwwww"
+            description="wwwwwwwwwwww"
             price={29.99}
           />
           <Card
-            imageSrc="/dog1.jpg"
-            title="Senior Dog Food"
-            description="Tailored nutrition carefully crafted for your older canine companion."
+            imageSrc="/wet3.jpg"
+            title="wwwwwwwwww"
+            description="wwwwwwwwwwwwww"
             price={29.99}
           />
         </div>
@@ -45,4 +45,4 @@ const Dog = () => {
   );
 };
 
-export default Dog;
+export default WetFood;

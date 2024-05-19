@@ -27,7 +27,6 @@ const Card: React.FC<CardProps> = ({ title, imageSrc, description, price }) => {
           width={350}
         />
       </Link>
-
       <CardContent title={title} description={description} price={price} />
     </div>
   );

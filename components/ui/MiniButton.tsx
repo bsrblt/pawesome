@@ -1,20 +1,25 @@
 import React from "react";
+import { CartItem } from "../utils/types";
 
-interface ButtonProps {
+interface MiniButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: () => void | number;
   size?: string;
   variant?: string;
   children: any;
   className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, className, children }) => {
+const MiniButton: React.FC<MiniButtonProps> = ({
+  onClick,
+  className,
+  children,
+}) => {
   return (
     <button onClick={onClick} className={className}>
       <div
-        className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center px-6 py-2.5 rounded-lg text-lemonlight text-md font-semibold justify-center shadow-sh z-10 min-w-[7rem]   active:translate-x-[0.35rem] active:translate-y-[0.35rem]
+        className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center p-2 rounded-lg text-lemonlight text-md font-semibold justify-center shadow-sh z-10 w-auto  active:translate-x-[0.35rem] active:translate-y-[0.35rem] max-h-6
     transition-all"
       >
         <span> {children}</span>
@@ -24,4 +29,4 @@ const Button: React.FC<ButtonProps> = ({ onClick, className, children }) => {
   );
 };
 
-export default Button;
+export default MiniButton;

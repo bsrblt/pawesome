@@ -1,6 +1,6 @@
 import React from "react";
 
-const IconButton: React.FC<{
+const MenuButton: React.FC<{
   icon: React.ReactNode;
   children?: React.ReactNode;
   onClick?: () => void;
@@ -16,4 +16,4 @@ const IconButton: React.FC<{
   );
 };
 
-export default IconButton;
+export default MenuButton;

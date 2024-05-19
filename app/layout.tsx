@@ -3,6 +3,8 @@ import { Archivo, Lobster } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import { CartContextProvider } from "../store/CartContext";
+
 const lobster = Lobster({
   weight: "400",
   subsets: ["latin"],
@@ -21,11 +23,13 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth min-w-screen">
       <body className={`${archivo.variable} ${lobster.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <CartContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartContextProvider>
       </body>
     </html>
   );

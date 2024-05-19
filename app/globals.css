@@ -31,6 +31,9 @@
     text-wrap: balance;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--font-archivo), sans-serif;
 }

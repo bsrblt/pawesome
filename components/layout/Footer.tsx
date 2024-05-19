@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import Link from "next/link";
 import { FacebookIcon, TwitterIcon, InstagramIcon } from "../ui/Icons";
+import CartContext from "store/CartContext";
 
 type FooterLinkProps = {
   href: string;
@@ -18,7 +20,8 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, text }) => (
   </li>
 );
 
-export default function Footer() {
+const Footer = () => {
+  const cartCtx = useContext(CartContext);
   const sections = [
     {
       title: "About",
@@ -94,4 +97,5 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+export default Footer;
