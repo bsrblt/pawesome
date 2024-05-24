@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "components/ui/Card";
 
-const DryFood = () => {
+const Dog = () => {
   return (
     <section className="bg-bermuda py-12 md:py-24 relative">
       <div
@@ -13,16 +13,10 @@ const DryFood = () => {
         }}
       ></div>
       <h1 className="text-3xl md:text-4xl font-bold text-darkpur mb-12 sm:mb-16 sm:-mt-6 text-center font-lobster tracking-wider">
-        Dry Food
+        Cat Food
       </h1>
       <div className="container mx-auto px-4 items-center relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <Card
-            imageSrc="/dogfood.jpg"
-            title="Premium Dry Dog Food"
-            description="High-quality protein and essential nutrients for your pup."
-            price={49.99}
-          />
           <Card
             imageSrc="/catfood.jpg"
             title="Premium Dry Cat Food"
@@ -30,33 +24,15 @@ const DryFood = () => {
             price={49.99}
           />
           <Card
-            imageSrc="/dogfood3.jpg"
-            title="Puppy Food"
-            description="Specially formulated and highly nutritious for growing puppies."
+            imageSrc="/wetcat.jpg"
+            title="Wet Cat Food"
+            description="Delicious and nutritious wet food for your feline friend."
             price={29.99}
           />
           <Card
             imageSrc="/kitty.jpg"
             title="Kitty Food"
             description="Specially formulated and highly nutritious for growing kitties."
-            price={29.99}
-          />
-          <Card
-            imageSrc="/hamsterfood.jpg"
-            title="Hamster Food"
-            description="Balanced diet and healthy mucnhies for your small furry friend."
-            price={14.99}
-          />
-          <Card
-            imageSrc="/gp.jpg"
-            title="Guinea Pig Food"
-            description="Your little friend's favourite food, now with extra flavour."
-            price={19.99}
-          />
-          <Card
-            imageSrc="/dog1.jpg"
-            title="Senior Dog Food"
-            description="Tailored nutrition carefully crafted for your older canine companion."
             price={29.99}
           />
           <Card
@@ -71,4 +47,4 @@ const DryFood = () => {
   );
 };
 
-export default DryFood;
+export default Dog;

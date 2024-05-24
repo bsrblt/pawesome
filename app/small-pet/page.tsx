@@ -12,9 +12,11 @@ const SmallPet = () => {
           backgroundPosition: "center",
         }}
       ></div>
-
+      <h1 className="text-3xl md:text-4xl font-bold text-darkpur mb-12 sm:mb-16 sm:-mt-6 text-center font-lobster tracking-wider">
+        Small Pet
+      </h1>
       <div className="container mx-auto px-4 items-center relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <Card
             imageSrc="/hamsterfood.jpg"
             title="Hamster Food"

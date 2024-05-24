@@ -45,6 +45,7 @@ const config: Config = {
         xs: "440px",
       },
       fontFamily: {
+        acme: "var(--font-acme)",
         lobster: "var(--font-lobster)",
         archivo: "var(--font-archivo)",
         "archivo-black": "var(--font-archivo-black)",

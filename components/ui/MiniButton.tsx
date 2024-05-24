@@ -19,7 +19,7 @@ const MiniButton: React.FC<MiniButtonProps> = ({
   return (
     <button onClick={onClick} className={className}>
       <div
-        className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center p-2 rounded-lg text-lemonlight text-md font-semibold justify-center shadow-sh z-10 w-auto  active:translate-x-[0.35rem] active:translate-y-[0.35rem] max-h-6
+        className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center p-2 rounded-lg text-lemonlight text-md font-bold justify-center shadow-sh z-10 w-auto  active:translate-x-[0.35rem] active:translate-y-[0.35rem] max-h-6
     transition-all"
       >
         <span> {children}</span>

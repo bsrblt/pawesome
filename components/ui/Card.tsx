@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ title, imageSrc, description, price }) => {
             aspectRatio: "600/400",
             objectFit: "cover",
           }}
-          width={350}
+          width={600}
         />
       </Link>
       <CardContent title={title} description={description} price={price} />

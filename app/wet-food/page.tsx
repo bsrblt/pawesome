@@ -12,31 +12,33 @@ const WetFood = () => {
           backgroundPosition: "center",
         }}
       ></div>
-
+      <h1 className="text-3xl md:text-4xl font-bold text-darkpur mb-12 sm:mb-16 sm:-mt-6 text-center font-lobster tracking-wider">
+        Wet Food
+      </h1>
       <div className="container mx-auto px-4 items-center relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <Card
-            imageSrc="/wet1.jpg"
-            title="wwwwwwwwww"
-            description="wwwwwwwwwwww."
+            imageSrc="/wetcat.jpg"
+            title="Wet Cat Food"
+            description="Highly nutritious wet food for your lovely furry."
             price={49.99}
           />
           <Card
             imageSrc="/dogfoodwet.jpg"
             title="Wet Dog Food"
-            description="Delicious and nutritious wet food for your canine friend."
+            description="Delicious and nutritious wet food for man's best friend."
             price={39.99}
           />
           <Card
-            imageSrc="/wet2.jpg"
-            title="wwwwwwwwwwwww"
-            description="wwwwwwwwwwww"
+            imageSrc="/wet3.jpg"
+            title="Wet Puppy Food "
+            description="Luxurious wet food specially crafted for your little canine."
             price={29.99}
           />
           <Card
-            imageSrc="/wet3.jpg"
-            title="wwwwwwwwww"
-            description="wwwwwwwwwwwwww"
+            imageSrc="/wetfood2.jpg"
+            title="Diet Wet Cat Food"
+            description="Maintains weight control while keeping it tasty for your feline."
             price={29.99}
           />
         </div>

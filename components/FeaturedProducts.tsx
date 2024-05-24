@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
             View All
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols- lg:grid-cols-4 gap-8">
           <Card
             imageSrc="/dogfood.jpg"
             title="Premium Dry Dog Food"
@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
             price={49.99}
           />
           <Card
-            imageSrc="/catfood2.jpg"
+            imageSrc="/wetcat.jpg"
             title="Wet Cat Food"
             description="Delicious and nutritious wet food for your feline friend."
             price={29.99}
@@ -30,7 +30,7 @@ const FeaturedProducts = () => {
           <Card
             imageSrc="/hamsterfood.jpg"
             title="Hamster Food"
-            description="Balanced diet and healthy mucnhies for your small furry friend."
+            description="Highly nutritious munchies for your small furry friend."
             price={14.99}
           />
           <Card

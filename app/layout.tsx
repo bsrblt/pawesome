@@ -1,9 +1,16 @@
 import React, { ReactNode } from "react";
-import { Archivo, Lobster } from "next/font/google";
+import { Archivo, Lobster, Acme } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import { CartContextProvider } from "../store/CartContext";
+
+const acme = Acme({
+  weight: "400",
+  subsets: ["latin"],
+
+  variable: "--font-acme",
+});
 
 const lobster = Lobster({
   weight: "400",
@@ -24,7 +31,9 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" className="!scroll-smooth min-w-screen">
-      <body className={`${archivo.variable} ${lobster.variable}`}>
+      <body
+        className={`${archivo.variable} ${lobster.variable} ${acme.variable}`}
+      >
         <CartContextProvider>
           <Header />
           {children}

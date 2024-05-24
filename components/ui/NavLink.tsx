@@ -15,4 +15,18 @@ const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   );
 };
 
+export const MobileNavLink: React.FC<{
+  href: string;
+  children: React.ReactNode;
+}> = ({ href, children }) => {
+  return (
+    <Link
+      href={href}
+      className="flex flex-wrap px-4 py-1 text-turq lg:text-[1rem] text-sm tracking-wide font-archivo justify-end hover:text-rosy transition-colors"
+    >
+      {children}
+    </Link>
+  );
+};
+
 export default NavLink;

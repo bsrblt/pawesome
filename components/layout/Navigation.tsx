@@ -1,5 +1,6 @@
 import React from "react";
 import NavLink from "components/ui/NavLink";
+import { MenuIcon } from "components/ui/Icons";
 
 const Navigation: React.FC = () => {
   return (

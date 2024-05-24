@@ -5,11 +5,11 @@ import Logo from "components/ui/Logo";
 import AccountMenu from "components/ui/AccountMenu";
 import Cart from "components/ui/Cart";
 import Navigation from "./Navigation";
-import MobileNavigation from "./MobileNavigation";
 import useIsSmallScreen from "components/utils/hooks/useIsSmallScreen";
 import UserActions from "./UserActions";
 import CartContext from "store/CartContext";
 import { useRouter } from "next/navigation";
+import MobileNavigation from "./MobileNavigation";
 
 const Header: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,9 @@ const Header: React.FC = () => {
     setShowCart(false);
     setShowSearch(false);
   };
-
+  const closeCartHandler = () => {
+    setShowCart(false);
+  };
   const checkoutHandler = () => {
     setShowCart(false);
     totalItemsQuantity > 0 ? router.push("/checkout") : null;
@@ -106,7 +108,7 @@ const Header: React.FC = () => {
               onClear={clearCartHandler}
               showCart={showCart}
               onCheckout={checkoutHandler}
-              onClose={() => setShowCart(false)}
+              onClose={closeCartHandler}
             />
           ) : null}
         </AnimatePresence>
