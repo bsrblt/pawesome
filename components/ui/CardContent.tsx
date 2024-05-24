@@ -41,9 +41,7 @@ const CardContent: React.FC<CardContentProps> = ({
       <p className="text-darkpur mb-4">{description}</p>
       <div className="flex items-center justify-between">
         <span className="text-primary font-bold text-lg">${price}</span>
-        <Button onClick={addToCartHandler} size="sm">
-          Add to Cart
-        </Button>
+        <Button onClick={addToCartHandler}>Add to Cart</Button>
       </div>
     </div>
   );
