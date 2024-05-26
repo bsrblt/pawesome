@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Button from "./Button";
 import Link from "next/link";
 import CartContext from "store/CartContext";
-import { CartItem } from "components/utils/types";
+import { CartItem } from "lib/types";
 
 interface CardContentProps {
   title: string | undefined;
@@ -31,17 +31,21 @@ const CardContent: React.FC<CardContentProps> = ({
   };
 
   return (
-    <div className="pb-1">
-      <Link href="/">
-        <h3 className="text-lg font-bold text-darkpur cursor-pointer">
-          {title}
-        </h3>
-      </Link>
+    <div className="flex flex-col pb-1 justify-between items-stretch">
+      <section>
+        <Link href="/">
+          <h3 className="text-lg font-bold text-darkpur cursor-pointer">
+            {title}
+          </h3>
+        </Link>
 
-      <p className="text-darkpur mb-4">{description}</p>
+        <p className="text-darkpur mb-4">{description}</p>
+      </section>
       <div className="flex items-center justify-between">
         <span className="text-primary font-bold text-lg">${price}</span>
-        <Button onClick={addToCartHandler}>Add to Cart</Button>
+        <div className="mb-1">
+          <Button onClick={addToCartHandler}>Add to Cart</Button>
+        </div>
       </div>
     </div>
   );

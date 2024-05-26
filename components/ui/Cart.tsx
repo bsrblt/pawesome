@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import Button from "components/ui/Button";
-import { CartItem } from "components/utils/types";
+import { CartItem } from "lib/types";
 import CartContext from "store/CartContext";
 import { CloseIcon, MinusIcon, PlusIcon } from "./Icons";
 import MiniButton from "./MiniButton";
@@ -40,10 +40,10 @@ const Cart: React.FC<CartProps> = ({
         </MiniButton>
       </div>
 
-      <div className="text-lemonlight space-y-2">
+      <div className="text-lemonlight space-y-2 mx-2">
         {items.map((item: CartItem) => (
           <div key={item.id} className="flex justify-between items-center">
-            <span className="flex w-[30%] gap-2 items-center justify-start">
+            <span className="flex w-[35%] gap-1 items-center justify-start">
               <MiniButton onClick={() => removeItem(item.id)} type="button">
                 <MinusIcon />
               </MiniButton>
@@ -55,7 +55,7 @@ const Cart: React.FC<CartProps> = ({
                 <PlusIcon />
               </MiniButton>
             </span>
-            <span className="w-[53%] ml-2 text-left">
+            <span className="w-[52%] ml-2 text-left text-sm">
               <h3>{item.title}</h3>
             </span>
             <span className="w-[17%]">
@@ -70,7 +70,7 @@ const Cart: React.FC<CartProps> = ({
         <h2 className="text-xl">Total: ${finalTotal.toFixed(2)}</h2>
       </div>
 
-      <div className="flex justify-center items-end p-4 gap-8">
+      <div className="flex justify-center items-end p-4 gap-4">
         <Button onClick={onClear} type="submit" setWidth="7rem">
           Clear
         </Button>

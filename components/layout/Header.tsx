@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useContext } from "react";
 import { AnimatePresence } from "framer-motion";
-import Logo from "components/ui/Logo";
+import HeaderLogo from "components/ui/HeaderLogo";
 import AccountMenu from "components/ui/AccountMenu";
 import Cart from "components/ui/Cart";
 import Navigation from "./Navigation";
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
     <div className="sticky z-40 top-0">
       <header className=" w-full bg-gray-800 py-3 shadow">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Logo />
+          <HeaderLogo />
           {isSmallScreen ? null : <Navigation />}
           <UserActions
             menuToggler={menuToggler}

@@ -1,5 +1,5 @@
 import React from "react";
-import { CartItem } from "../utils/types";
+import { CartItem } from "../../lib/types";
 
 interface MiniButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
@@ -17,10 +17,13 @@ const MiniButton: React.FC<MiniButtonProps> = ({
   children,
 }) => {
   return (
-    <button onClick={onClick} className={className}>
+    <button
+      onClick={onClick}
+      className="rounded-lg border-darkpur/80 bg-darkpur/80 ml-2 mt-2 w-[25px]"
+    >
       <div
-        className="group relative overflow-hidden bg-rosy focus:ring-4 focus:ring-blue-300 inline-flex items-center p-2 rounded-lg text-lemonlight text-md font-bold justify-center shadow-sh z-10 w-auto  active:translate-x-[0.35rem] active:translate-y-[0.35rem] max-h-6
-    transition-all"
+        className="group relative overflow-hidden block -translate-x-1 -translate-y-1   bg-rosy text-md font-semibold 
+    active:translate-x-0 active:translate-y-0 transition-all focus:ring-4 focus:ring-blue-300 items-center p-2 rounded-lg justify-center z-10 cursor-pointer"
       >
         <span> {children}</span>
         <div className="absolute inset-0 h-[200%] w-[200%] rotate-45 translate-x-[-70%] transition-all group-hover:scale-100 bg-white/30 group-hover:translate-x-[50%] z-20 duration-1000"></div>

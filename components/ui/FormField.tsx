@@ -1,15 +1,18 @@
 import React from "react";
 
 interface FormFieldProps {
-  label: string;
+  label?: string;
   id: string;
   name: string;
-  type: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   pattern?: string;
   setWidth?: string;
+  minLength?: number;
+  maxLength?: number;
+  type?: string;
+  placeholder?: string;
 }
 
 const FormField: React.FC<FormFieldProps> = ({
@@ -18,14 +21,17 @@ const FormField: React.FC<FormFieldProps> = ({
   name,
   type,
   value,
+  minLength,
+  maxLength,
+  placeholder,
   onChange,
   required = false,
   setWidth,
   pattern,
 }) => {
   return (
-    <div className="my-2 z-10">
-      <label className="block text-gray-700 mb-2" htmlFor={id}>
+    <div className="my-1 z-10">
+      <label className="block text-gray-700 mb-[6px] pl-[1px]" htmlFor={id}>
         {label}
       </label>
       <input
@@ -35,6 +41,9 @@ const FormField: React.FC<FormFieldProps> = ({
         id={id}
         name={name}
         value={value}
+        minLength={minLength}
+        maxLength={maxLength}
+        placeholder={placeholder}
         onChange={onChange}
         required={required}
         pattern={pattern}

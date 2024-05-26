@@ -1,4 +1,3 @@
-// SignUpForm.tsx
 import React from "react";
 import FormField from "./FormField";
 import Button from "./Button";
@@ -127,7 +126,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       >
         <div>
           <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-end gap-4 mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-end gap-4 mb-2">
               {username}
               <div className="flex gap-1 mt-12 text-sm">
                 <p> Already a member? </p>
@@ -139,21 +138,21 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2">
               {password}
               {confirmPassword}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2">
               {firstName}
               {lastName}
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-2">
               {email}
               {phone}
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols- gap-4 my-4">
+          <div className="grid grid-cols-1 lg:grid-cols- gap-4 mb-4">
             {address}
           </div>
 

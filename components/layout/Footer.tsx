@@ -1,8 +1,6 @@
-"use client";
-import React, { useContext } from "react";
+import React from "react";
 import Link from "next/link";
 import { FacebookIcon, TwitterIcon, InstagramIcon } from "../ui/Icons";
-import CartContext from "store/CartContext";
 
 type FooterLinkProps = {
   href: string;
@@ -21,14 +19,13 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, text }) => (
 );
 
 const Footer = () => {
-  const cartCtx = useContext(CartContext);
   const sections = [
     {
       title: "About",
       links: [
         { href: "#", text: "Our Story" },
         { href: "#", text: "Our Mission" },
-        { href: "#", text: "Careers" },
+        { href: "/careers", text: "Careers" },
       ],
     },
     {
@@ -44,7 +41,7 @@ const Footer = () => {
       title: "Support",
       links: [
         { href: "#", text: "Contact Us" },
-        { href: "#", text: "FAQs" },
+        { href: "#", text: "FAQ" },
         { href: "#", text: "Shipping & Returns" },
       ],
     },

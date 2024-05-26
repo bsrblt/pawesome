@@ -19,9 +19,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
   };
 
   return (
-    <div className="border-turq rounded-xl border-8 p-3 bg-turq/90 shadow-sh h-[430px]">
+    <div className="border-turq rounded-xl border-8 p-3 bg-turq/90 shadow-sh lg:max-h-[420px]">
       <h2 className="text-2xl font-bold text-gray-700 mb-6">Login</h2>
-      <div className="flex sm:flex gap-1 justify-start text-sm">
+      <div className="flex sm:flex gap-1 justify-start text-sm mb-[20px]">
         <p> Not a member? </p>
         <p
           className="text-darkpur font-bold cursor-pointer z-10"
@@ -32,7 +32,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="sm:grid grid-cols-2 lg:grid-cols-1 md:w-[100%] gap-4 mt-6">
+        <div className="sm:grid grid-cols-2 lg:grid-cols-1 md:w-[100%] gap-6 mt-4">
           <div>
             <FormField
               label="Username"
@@ -55,7 +55,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               required
             />
           </div>
-          <div className="flex justify-between sm:items-end lg:mt-[1.7rem] xl:mt-8 sm:mt-0 items-end gap-4 mt-6">
+          <div className="flex justify-between sm:items-end lg:mt-[1.25rem] xl:mt-8 sm:mt-0 items-end gap-4 mt-6">
             <Button type="submit" setWidth="80px">
               Login
             </Button>

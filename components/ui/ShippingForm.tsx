@@ -30,7 +30,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({
       className="flex flex-col justify-between h-full z-10"
     >
       <div>
-        <div className="grid grid-cols-1 md:grid-cols- gap-4 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols- gap-4 mb-4">
           <FormField
             label="First Name"
             id="firstName"
@@ -50,20 +50,17 @@ const ShippingForm: React.FC<ShippingFormProps> = ({
             required
           />
         </div>
-        <div className="grid gap-4 mb-4">
-          <FormField
-            label="Address"
-            id="address"
-            name="address"
-            type="text"
-            value={formData.address}
-            onChange={handleInputChange}
-            setWidth="100%"
-            required
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols- gap-4 my-4">
+        <FormField
+          label="Address"
+          id="address"
+          name="address"
+          type="text"
+          value={formData.address}
+          onChange={handleInputChange}
+          setWidth="100%"
+          required
+        />
+        <div className="grid grid-cols-1 md:grid-cols- gap-1 my-4">
           <FormField
             label="Email"
             id="email"

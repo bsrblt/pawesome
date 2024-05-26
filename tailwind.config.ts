@@ -21,7 +21,7 @@ const config: Config = {
         lg: "0 8px 16px var(--tw-shadow-color)",
       },
       boxShadow: {
-        sh: "5px 5px 0px 0px #471f71",
+        sh: "8px 8px 4px 0px #471f71",
       },
       colors: {
         transparent: "trans",

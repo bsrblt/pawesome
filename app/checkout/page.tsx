@@ -1,11 +1,15 @@
 "use client";
 import React, { useContext, useState } from "react";
 import CartContext from "store/CartContext";
-import DiscoverNutrition from "components/DiscoverNutrition";
 import ShippingForm from "components/ui/ShippingForm";
-import OrderSummary from "app/OrderSummary";
+import OrderSummary from "components/ui/OrderSummary";
 import LoginForm from "components/ui/LoginForm";
 import SignUpForm from "components/ui/SignUpForm";
+import Background from "components/layout/Background";
+import PageTitle from "components/ui/PageTitle";
+import DiscoverNutrition from "components/layout/DiscoverNutrition";
+import Image from "next/image";
+import OrderTerms from "components/ui/OrderTerms";
 
 const Checkout = () => {
   const { items, totalAmount, totalItemsQuantity, clearCart } =
@@ -23,9 +27,9 @@ const Checkout = () => {
   const [isMember, setIsMember] = useState(true);
   const [isSigningUp, setIsSigningUp] = useState(false);
   const [notJoining, setNotJoining] = useState(false);
+  const [discount, setDiscount] = useState(0);
 
   const shippingCost = totalItemsQuantity > 0 ? 4.99 : 0.0;
-  const finalTotal = totalAmount + shippingCost;
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -58,37 +62,42 @@ const Checkout = () => {
 
   return (
     <>
-      <section className="bg-bermuda py-12 md:py-24 relative">
-        <div
-          className="absolute inset-0 opacity-10 z-0"
-          style={{
-            backgroundImage: "url('products1.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></div>
+      <Background>
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-darkpur mb-12 sm:mb-16 sm:-mt-6 text-center font-lobster tracking-wider">
-            {submitted ? "Thank you for your purchase!" : "Checkout"}
-          </h1>
+          <PageTitle
+            text={submitted ? "Thank you for your purchase!" : "Checkout"}
+          />
           {submitted ? (
             <div className="text-center">
               <p className="text-lg mt-4">
                 Your order has been placed successfully. You will receive a
                 confirmation email shortly.
               </p>
+              <Image
+                src="/images/ty.jpg"
+                alt="thankyou"
+                // width={400}
+                height={400}
+              />
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:w-[69%] mx-auto">
-              <div className={`h-full z-10 ${isMember ? "max-h-[432px]" : ""}`}>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto">
+              <OrderTerms
+                onDiscountApply={(discount) => setDiscount(discount)}
+              />
+              <div
+                className={`h-full z-0 ${
+                  isMember ? "max-h-[420px]" : ""
+                } transition-all duration-500`}
+              >
                 <OrderSummary
                   items={items}
                   totalAmount={totalAmount}
                   shippingCost={shippingCost}
-                  finalTotal={finalTotal}
+                  discount={discount}
                 />
               </div>
-              <div className="h-full z-10 ">
+              <div className="h-full z-0 ">
                 {notJoining && !isMember ? (
                   <ShippingForm
                     onHasAcc={existingUserHandler}
@@ -113,8 +122,15 @@ const Checkout = () => {
             </div>
           )}
         </div>
-      </section>
-      <DiscoverNutrition />
+      </Background>
+      <DiscoverNutrition
+        href1="/products"
+        button1Text="Shop More"
+        href2="/"
+        button2Text="Home"
+        title="Make Sure Nothing is Missing"
+        desc="Before you finalize your purchase, take a moment to ensure you've explored all the options available. Double-check your cart to see if there's anything else you'd like to add to enhance your pet's nutrition and well-being. With our diverse range of products catering to various dietary needs and preferences, you're bound to find the perfect fit for your furry friend. Remember, there's a wide array of products to choose from, so you might discover something new that piques your interest. Happy shopping!"
+      />
     </>
   );
 };

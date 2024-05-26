@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
-import Card from "./ui/Card";
+import Link from "next/link";
+import Card from "components/ui/Card";
 
 const FeaturedProducts = () => {
   return (
@@ -10,7 +10,10 @@ const FeaturedProducts = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-700 font-lobster tracking-wide">
             Featured Products
           </h2>
-          <Link className="text-darkpur transition-colors" href="#">
+          <Link
+            className="text-darkpur transition-colors font-semibold hover:text-rosy"
+            href="/products"
+          >
             View All
           </Link>
         </div>

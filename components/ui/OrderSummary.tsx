@@ -1,30 +1,45 @@
 import React, { useContext } from "react";
-import { CartItem } from "components/utils/types";
+import { CartItem } from "lib/types";
 import MiniButton from "components/ui/MiniButton";
 import { MinusIcon, PlusIcon } from "components/ui/Icons";
 import CartContext from "store/CartContext";
+import Button from "./Button";
+import Link from "next/link";
 
 interface OrderSummaryProps {
   items: CartItem[];
   totalAmount: number;
   shippingCost: number;
-  finalTotal: number;
+  discount: number;
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = ({
   items,
   totalAmount,
   shippingCost,
-  finalTotal,
+  discount,
 }) => {
   const { addItem, removeItem } = useContext(CartContext);
 
+  const discountAmount = totalAmount * discount;
+  const finalTotal = totalAmount - discountAmount + shippingCost;
+
   return (
-    <div className="border-turq rounded-xl border-8 p-3 bg-white/90 shadow-sh h-full max-h-[662px] min-h-[260px] overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col justify-between">
+    <div className="border-turq rounded-xl border-8 p-3 bg-white/90 shadow-sh h-full max-h-[688px] min-h-[250px] overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col justify-between transition-all duration-500">
       <div>
         <h2 className="text-2xl font-bold text-gray-700 mb-6">Order Summary</h2>
         {items.length === 0 ? (
-          <p className="text-sm">Your cart is empty.</p>
+          <>
+            <p className="text-sm mb-4">Your cart is empty.</p>
+            <div className="flex gap-[3px] justify-center lg:mt-14">
+              <Link href={"/products"}>
+                <Button>Products</Button>
+              </Link>
+              <Link href={"/"}>
+                <Button>Home</Button>
+              </Link>
+            </div>
+          </>
         ) : null}
       </div>
 
@@ -70,6 +85,13 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
             <p>Shipping: </p>${shippingCost.toFixed(2)}
           </div>
         </h3>
+        {discount > 0 && (
+          <h3 className="text-xl font-bold text-gray-700">
+            <div className="flex justify-between w-full border-darkpur border-b-[1px] text-tahiti">
+              <p>Discount: </p>${discountAmount.toFixed(2)}
+            </div>
+          </h3>
+        )}
         <br />
         <h3 className="text-xl font-bold text-gray-700">
           <div className="flex justify-between w-full border-darkpur border-b-[1px]">

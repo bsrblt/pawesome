@@ -5,7 +5,6 @@ import Link from "next/link";
 
 interface CardProps {
   title?: string | undefined;
-  children?: React.ReactNode;
   imageSrc?: string;
   description?: string;
   price?: number;
@@ -13,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, imageSrc, description, price }) => {
   return (
-    <div className="">
+    <div className="flex flex-col h-[24rem] bg-tahiti/20 rounded-xl border border-bermuda/5">
       <Link href={`/product/${title}`}>
         <Image
           alt={title ?? "No Title"}
