@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, createContext, useReducer, useEffect } from "react";
+import React, { ReactNode, createContext, useReducer } from "react";
 import { CartItem } from "lib/types";
 
 interface CartState {
@@ -74,16 +74,10 @@ const cartReducer = (state: CartState, action: any): CartState => {
 export const CartContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const initializeCart = (): CartState => {
-    const storedCart = localStorage.getItem("cart");
-    return storedCart ? JSON.parse(storedCart) : { items: [], totalAmount: 0 };
-  };
-
-  const [cart, dispatchCartAction] = useReducer(cartReducer, initializeCart());
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+  const [cart, dispatchCartAction] = useReducer(cartReducer, {
+    items: [],
+    totalAmount: 0,
+  });
 
   function addItemToCartHandler(item: CartItem) {
     dispatchCartAction({ type: "ADD", item: item });
@@ -111,7 +105,7 @@ export const CartContextProvider: React.FC<{ children: ReactNode }> = ({
     removeItem: removeItemFromCartHandler,
     clearCart: clearCartHandler,
   };
-
+  console.log(cartContext.totalItemsQuantity);
   return (
     <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
   );
