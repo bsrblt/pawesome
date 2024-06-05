@@ -13,7 +13,7 @@ const FAQ = () => {
       id: 1,
       question: "What is the shipping cost for orders?",
       answer:
-        "The shipping cost for orders is $4.99, but it's free if your total order amount exceeds $100.",
+        "The shipping cost for orders is $4.99, but it becomes free if your total order amount exceeds $100.",
     },
     {
       id: 2,
@@ -71,8 +71,8 @@ const FAQ = () => {
                   <div className="w-[100%]">
                     <h1 className=" block sm:text-xl text-[0.95rem] font-bold text-center drop-shadow-lg text-gray-200 mt-3 leading-relaxed">
                       Not listed here?{" "}
-                      <span className="text-darkpur ">Contact us</span> and
-                      we'll return as soon as possible.
+                      <span className="text-darkpur ">Contact us</span> and we
+                      &#39;ll return as soon as possible.
                     </h1>
                   </div>
                 </Link>
