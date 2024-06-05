@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo from "components/ui/Logo";
 import Button from "components/ui/Button";
 
-interface DiscoverNutritionProps {
+interface BottomSectionProps {
   data: {
     button1Text: string;
     button2Text: string;
@@ -14,7 +14,7 @@ interface DiscoverNutritionProps {
   };
 }
 
-const DiscoverNutrition: React.FC<DiscoverNutritionProps> = ({ data }) => {
+const BottomSection: React.FC<BottomSectionProps> = ({ data }) => {
   return (
     <section className="bg-turq py-12 md:py-24 relative">
       <div
@@ -46,4 +46,4 @@ const DiscoverNutrition: React.FC<DiscoverNutritionProps> = ({ data }) => {
   );
 };
 
-export default DiscoverNutrition;
+export default BottomSection;

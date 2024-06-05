@@ -4,6 +4,7 @@ import NavLink from "components/ui/NavLink";
 const Navigation: React.FC = () => {
   return (
     <nav className=" flex items-center lg:gap-6 gap-4">
+      <NavLink href="/products">All</NavLink>
       <NavLink href="/dog">Dog</NavLink>
       <NavLink href="/cat">Cat</NavLink>
       <NavLink href="/small-pet">Small Pet</NavLink>
