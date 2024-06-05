@@ -20,7 +20,7 @@ export const productsData: Product[] = [
   },
   {
     id: 2,
-    imageSrc: "/dogfoodWet.jpg",
+    imageSrc: "/dogfoodwet.jpg",
     title: "Wet Dog Food",
     description: "Delicious and nutritious Wet food for your canine friend.",
     price: 39.99,
@@ -29,7 +29,7 @@ export const productsData: Product[] = [
   },
   {
     id: 3,
-    imageSrc: "/Dogfood3.jpg",
+    imageSrc: "/dogfood3.jpg",
     title: "Puppy Food",
     description:
       "Specially formulated and highly nutritious for growing puppies.",
