@@ -7,14 +7,18 @@ import LoginForm from "components/ui/LoginForm";
 import SignUpForm from "components/ui/SignUpForm";
 import Background from "components/layout/Background";
 import PageTitle from "components/ui/PageTitle";
-import DiscoverNutrition from "components/layout/DiscoverNutrition";
+import { bottomSectionData } from "lib/bottomSectionData";
+import BottomSection from "components/layout/BottomSection";
 import Image from "next/image";
-import OrderTerms from "components/ui/OrderTerms";
+import Discount from "components/ui/Discount";
+import WelcomeOrder from "components/ui/WelcomeOrder";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Checkout = () => {
   const { items, totalAmount, totalItemsQuantity, clearCart } =
     useContext(CartContext);
-
+  const session = useSession();
+  const bottomData = bottomSectionData.checkout;
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,6 +29,7 @@ const Checkout = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [isMember, setIsMember] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSigningUp, setIsSigningUp] = useState(false);
   const [notJoining, setNotJoining] = useState(false);
   const [discount, setDiscount] = useState(0);
@@ -44,6 +49,7 @@ const Checkout = () => {
 
   const existingUserHandler = () => {
     setIsMember(true);
+    setIsLoggedIn(false);
     setIsSigningUp(false);
     setNotJoining(false);
   };
@@ -58,6 +64,11 @@ const Checkout = () => {
     setIsMember(false);
     setIsSigningUp(false);
     setNotJoining(true);
+  };
+
+  const showLoginHandler = () => {
+    setIsMember(true);
+    setIsLoggedIn(false);
   };
 
   return (
@@ -82,9 +93,7 @@ const Checkout = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto">
-              <OrderTerms
-                onDiscountApply={(discount) => setDiscount(discount)}
-              />
+              <Discount onDiscountApply={(discount) => setDiscount(discount)} />
               <div
                 className={`h-full z-0 ${
                   isMember ? "max-h-[420px]" : ""
@@ -105,14 +114,19 @@ const Checkout = () => {
                     handleInputChange={handleInputChange}
                     handleFormSubmit={handleFormSubmit}
                   />
-                ) : isMember ? (
+                ) : isMember && !isLoggedIn ? (
                   <LoginForm
+                    onNoAcc={newUserHandler}
+                    onNoJoin={noJoinHandler}
+                  />
+                ) : (isMember && session) || isLoggedIn ? (
+                  <WelcomeOrder
                     onNoAcc={newUserHandler}
                     onNoJoin={noJoinHandler}
                   />
                 ) : isSigningUp ? (
                   <SignUpForm
-                    onHasAcc={existingUserHandler}
+                    onHasAcc={showLoginHandler}
                     onNoJoin={noJoinHandler}
                     formData={formData}
                     handleInputChange={handleInputChange}
@@ -123,14 +137,7 @@ const Checkout = () => {
           )}
         </div>
       </Background>
-      <DiscoverNutrition
-        href1="/products"
-        button1Text="Shop More"
-        href2="/"
-        button2Text="Home"
-        title="Make Sure Nothing is Missing"
-        desc="Before you finalize your purchase, take a moment to ensure you've explored all the options available. Double-check your cart to see if there's anything else you'd like to add to enhance your pet's nutrition and well-being. With our diverse range of products catering to various dietary needs and preferences, you're bound to find the perfect fit for your furry friend. Remember, there's a wide array of products to choose from, so you might discover something new that piques your interest. Happy shopping!"
-      />
+      <BottomSection data={bottomData} />
     </>
   );
 };

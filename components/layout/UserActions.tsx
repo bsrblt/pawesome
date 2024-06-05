@@ -44,15 +44,15 @@ const UserActions: React.FC<UserActionsProps> = ({
       <span className="relative w-0 -mx-1 -top-3 sm:right-[1rem] right-[0.75rem] text-rosy font-bold">
         <p>{cartCtx.totalItemsQuantity}</p>
       </span>
-      {!isSmallScreen ? (
-        <MenuButton
-          icon={<UserIcon className="h-5 w-5" />}
-          onClick={accountToggler}
-        />
-      ) : (
+      {isSmallScreen ? (
         <MenuButton
           icon={<MenuIcon className="h-5 w-5" />}
           onClick={menuToggler}
+        />
+      ) : (
+        <MenuButton
+          icon={<UserIcon className="h-5 w-5" />}
+          onClick={accountToggler}
         />
       )}
     </div>

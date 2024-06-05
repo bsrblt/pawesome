@@ -126,7 +126,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       >
         <div>
           <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-end gap-4 mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-end md:gap-4 md:mb-2">
               {username}
               <div className="flex gap-1 mt-12 text-sm">
                 <p> Already a member? </p>
@@ -138,29 +138,27 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-end gap-4 mb-2">
               {password}
               {confirmPassword}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
               {firstName}
               {lastName}
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-2">
               {email}
               {phone}
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols- gap-4 mb-4">
-            {address}
-          </div>
+          <div className="grid grid-cols-1 gap-4 mb-8">{address}</div>
 
           <div className="sm:flex grid items-center justify-between gap-4">
             <div>
               <Button type="submit">Sign Up</Button>
             </div>
-            <span className="grid gap-2 mt-4">
+            <span className="grid gap-2 sm:mt-4">
               <div className="sm:flex grid gap-1">
                 <p>or </p>
                 <p

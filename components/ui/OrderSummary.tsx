@@ -22,7 +22,8 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   const { addItem, removeItem } = useContext(CartContext);
 
   const discountAmount = totalAmount * discount;
-  const finalTotal = totalAmount - discountAmount + shippingCost;
+  const applyShippingCost = totalAmount <= 100 ? shippingCost : 0;
+  const finalTotal = totalAmount - discountAmount + applyShippingCost;
 
   return (
     <div className="border-turq rounded-xl border-8 p-3 bg-white/90 shadow-sh h-full max-h-[688px] min-h-[250px] overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col justify-between transition-all duration-500">
@@ -43,7 +44,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
         ) : null}
       </div>
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pr-2 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden justify-between pr-1 custom-scrollbar">
         <ul className="">
           {items.map((item: CartItem) => (
             <li key={item.id} className="mb-4 w-full">
@@ -54,8 +55,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                 </span>
               </div>
               <div className="flex items-center w-[19rem]">
-                <p className="w-[25%]"> Quantity: </p>
-
+                <p className="w-[25%]"> Quantity: </p>
                 <span className="flex items-center justify-between sm:w-[35%]">
                   <MiniButton onClick={() => removeItem(item.id)} type="button">
                     <MinusIcon />
@@ -63,7 +63,6 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                   <span className="flex justify-center mx-3">
                     <h3 className="font-bold">{item.quantity}</h3>
                   </span>
-
                   <MiniButton onClick={() => addItem(item)} type="button">
                     <PlusIcon />
                   </MiniButton>
@@ -77,18 +76,28 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
       <div className="mt-8">
         <h3 className="text-xl font-bold text-gray-700">
           <div className="flex justify-between w-full border-darkpur border-b-[1px]">
-            <p>Subtotal: </p>${totalAmount.toFixed(2)}
+            <p className="text-darkpur/90">Subtotal: </p>
+            <p className="text-darkpur/90">${totalAmount.toFixed(2)}</p>
           </div>
         </h3>
-        <h3 className="text-xl font-bold text-gray-700">
-          <div className="flex justify-between w-full border-darkpur border-b-[1px]">
-            <p>Shipping: </p>${shippingCost.toFixed(2)}
-          </div>
-        </h3>
+        {totalAmount <= 100 ? (
+          <h3 className="text-xl font-bold text-gray-700">
+            <div className="flex justify-between w-full border-darkpur border-b-[1px]">
+              <p>Shipping: </p>${shippingCost.toFixed(2)}
+            </div>
+          </h3>
+        ) : (
+          <h3 className="text-xl font-bold text-gray-700">
+            <div className="flex justify-between w-full border-darkpur border-b-[1px]">
+              <p className="text-emerald">Shipping: </p>
+              <p className="text-emerald"> $0.00</p>
+            </div>
+          </h3>
+        )}
         {discount > 0 && (
           <h3 className="text-xl font-bold text-gray-700">
             <div className="flex justify-between w-full border-darkpur border-b-[1px] text-tahiti">
-              <p>Discount: </p>${discountAmount.toFixed(2)}
+              <p>Discount: </p>$-{discountAmount.toFixed(2)}
             </div>
           </h3>
         )}

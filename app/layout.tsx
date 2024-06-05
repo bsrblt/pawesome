@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import { CartContextProvider } from "../store/CartContext";
+import SessionWrapper from "components/utils/SessionWrapper";
 
 const acme = Acme({
   weight: "400",
@@ -28,18 +29,20 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default async function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en" className="!scroll-smooth min-w-screen">
-      <body
-        className={`${archivo.variable} ${lobster.variable} ${acme.variable}`}
-      >
-        <CartContextProvider>
-          <Header />
-          {children}
-          <Footer />
-        </CartContextProvider>
-      </body>
-    </html>
+    <SessionWrapper>
+      <html lang="en" className="!scroll-smooth min-w-screen">
+        <body
+          className={`${archivo.variable} ${lobster.variable} ${acme.variable}`}
+        >
+          <CartContextProvider>
+            <Header />
+            {children}
+            <Footer />
+          </CartContextProvider>
+        </body>
+      </html>
+    </SessionWrapper>
   );
 }

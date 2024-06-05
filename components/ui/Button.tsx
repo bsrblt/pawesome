@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, setWidth, children }) => {
     >
       <div
         className={`group relative overflow-hidden block -translate-x-2 -translate-y-2   bg-rosy p-4 text-md font-semibold hover:-translate-y-2 
-    active:translate-x-0 active:translate-y-0 transition-all focus:ring-4 focus:ring-blue-300 items-center px-6 py-2.5 rounded-lg text-lemonlight justify-center z-10 cursor-pointer`}
+    active:translate-x-0 active:translate-y-0 transition-all focus:ring-4 focus:ring-blue-300 items-center px-6 py-2.5 rounded-lg text-lemonlight justify-center z-0 cursor-pointer`}
         onClick={onClick}
       >
         <span> {children}</span>

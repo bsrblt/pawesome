@@ -6,9 +6,11 @@ import FormField from "components/ui/FormField";
 import Image from "next/image";
 import petcare from "../../public/petcare.jpg";
 import Background from "components/layout/Background";
-import DiscoverNutrition from "components/layout/DiscoverNutrition";
+import { bottomSectionData } from "lib/bottomSectionData";
+import BottomSection from "components/layout/BottomSection";
 
 const Careers = () => {
+  const bottomData = bottomSectionData.careers;
   const handleBrowse = (file: File) => console.log("Selected file:", file);
 
   const message = (
@@ -31,7 +33,7 @@ const Careers = () => {
     </div>
   );
   const emailInput = (
-    <div className="flex items-center justify-between gap-4 p-1 mb-1">
+    <div className="flex items-center justify-between gap-4 p-1 mb-1 min-w-[15rem]">
       <label className="block text-sm font-medium text-darkpur fontpop-3">
         E-mail
       </label>
@@ -75,10 +77,10 @@ const Careers = () => {
     </div>
   );
   const cvForm = (
-    <div className="grid p-2 mt4 sm:p-8 text-darkpur border-darkpur border-transparent rounded-xl bg-turq shadow-lg">
+    <div className="grid p-2 mt4 sm:p-8 text-darkpur border-darkpur border-transparent rounded-xl bg-turq shadow-sh">
       {positionText}
       <div className="grid gap-4">
-        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+        <div className="grid sm:flex justify-between sm:items-center gap-4">
           <FileUploadInput onChange={handleBrowse} isValid={true} />
           {emailInput}
         </div>
@@ -99,21 +101,14 @@ const Careers = () => {
                 alt="pet care"
                 src={petcare}
                 height={550}
-                className="border-4 border-rosy/90 rounded-xl shadow-lg z-10"
+                className="border-4 border-rosy/90 rounded-xl z-10 shadow-sh"
               ></Image>
               {cvForm}
             </div>
           </div>
         </div>
       </Background>
-      <DiscoverNutrition
-        button1Text="Back Home"
-        button2Text="Learn More"
-        href1="/"
-        href2="/our-mission"
-        title="Partner with Us in Transforming Pet Nutrition"
-        desc="Joining our pet food company offers an unparalleled opportunity to be part of a dynamic and compassionate industry dedicated to the well-being of animals. As an employee, you'll work alongside a passionate team committed to innovation and excellence in pet nutrition, ensuring that pets receive the highest quality food possible. Your contributions will directly impact the health and happiness of countless pets, making a meaningful difference in their lives. This industry matters because pets are more than companions; they are family members, and providing them with optimal nutrition is essential for their longevity and vitality. By working with us, you'll be at the forefront of this important mission, enjoying a fulfilling career that combines professional growth with the satisfaction of knowing you're helping to improve the lives of pets and their owners."
-      />
+      <BottomSection data={bottomData} />
     </>
   );
 };

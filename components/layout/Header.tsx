@@ -28,6 +28,11 @@ const Header: React.FC = () => {
     setShowSearch(false);
   };
 
+  const closeNavMenu = () => {
+    console.log("closeNavMenu function called"); // Add this line for debugging
+    setShowNavMenu(false);
+  };
+
   const searchHandler = () => {
     setShowSearch((prev) => !prev);
     setShowNavMenu(false);
@@ -100,7 +105,13 @@ const Header: React.FC = () => {
       </header>
       <div className="flex justify-end" ref={navRef}>
         <AnimatePresence>
-          {showNavMenu ? <MobileNavigation showNavMenu={showNavMenu} /> : null}
+          {showNavMenu ? (
+            <MobileNavigation
+              showNavMenu={showNavMenu}
+              onAuthButtonClick={accountToggler}
+              closeNavMenu={closeNavMenu}
+            />
+          ) : null}
         </AnimatePresence>
         <AnimatePresence>
           {showCart ? (

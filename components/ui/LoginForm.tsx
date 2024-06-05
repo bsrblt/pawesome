@@ -1,6 +1,8 @@
 import React from "react";
 import FormField from "./FormField";
 import Button from "./Button";
+import GoogleButton from "./GoogleButton";
+import { signIn /* signOut, useSession */ } from "next-auth/react";
 
 interface LoginFormProps {
   onSubmit?: () => void;
@@ -32,7 +34,12 @@ const LoginForm: React.FC<LoginFormProps> = ({
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="sm:grid grid-cols-2 lg:grid-cols-1 md:w-[100%] gap-6 mt-4">
+        <span className="grid gap-4 justify-start">
+          <GoogleButton onClick={signIn} />
+          or continue with your username.
+        </span>
+
+        <div className="grid grid-cols-2 gap-6 mt-4">
           <div>
             <FormField
               label="Username"
@@ -55,7 +62,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               required
             />
           </div>
-          <div className="flex justify-between sm:items-end lg:mt-[1.25rem] xl:mt-8 sm:mt-0 items-end gap-4 mt-6">
+          <div className="flex justify-between sm:items-end xl:mt-2 items-end gap-4 mt-2 sm:mt-6">
             <Button type="submit" setWidth="80px">
               Login
             </Button>

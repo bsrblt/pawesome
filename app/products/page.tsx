@@ -4,11 +4,13 @@ import Card from "components/ui/Card";
 import { productsData, Product } from "lib/ProductsData";
 import ProductFilter from "components/ui/ProductFilter";
 import Button from "components/ui/Button";
-import DiscoverNutrition from "components/layout/DiscoverNutrition";
+import { bottomSectionData } from "lib/bottomSectionData";
+import BottomSection from "components/layout/BottomSection";
 import Background from "components/layout/Background";
 import PageTitle from "components/ui/PageTitle";
 
 const Products: React.FC = () => {
+  const bottomData = bottomSectionData.products;
   const [filters, setFilters] = useState<{
     category: string;
     type: string;
@@ -86,7 +88,7 @@ const Products: React.FC = () => {
         <PageTitle text="Browse Products" />
         <div className="container mx-auto px-4 items-center relative z-10">
           <div className="mb-8">
-            <div className="flex flex-col md:flex-row justify-between items-center pb-2 bg-turq rounded-xl md:p-1 pt-4 mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-center pb-2 bg-turq rounded-xl md:p-1 pt-4 mx-auto mb-8">
               <ProductFilter
                 label="Category"
                 value={filters.category}
@@ -122,8 +124,10 @@ const Products: React.FC = () => {
                 options={["-", "Price - High to Low", "Price - Low to High"]}
               />
 
-              <span className="mt-2 pr-1">
-                <Button onClick={handleFilterReset}>Reset Filters</Button>
+              <span className="my-2 pr-1">
+                <Button onClick={handleFilterReset} setWidth={"15rem"}>
+                  Reset Filters
+                </Button>
               </span>
             </div>
           </div>
@@ -140,14 +144,7 @@ const Products: React.FC = () => {
           </div>
         </div>
       </Background>
-      <DiscoverNutrition
-        button1Text="Home"
-        href1="/"
-        button2Text="Learn More"
-        href2="/faq"
-        title="Discover the Best Nutrition"
-        desc="Our pet food product stands as the pinnacle of pet nutrition due to its meticulous formulation and commitment to quality. We use only the finest natural ingredients, ensuring that each recipe is rich in essential nutrients like high-quality proteins, healthy fats, vitamins, and minerals. Our products are free from artificial additives, fillers, and by-products, providing pure, wholesome nutrition that supports your pet's overall health and vitality. This superior nutrition is crucial for promoting a strong immune system, healthy skin and coat, robust digestive health, and sustained energy levels. By choosing our pet food, you are investing in your pet's long-term well-being, ensuring they receive the best care possible through every meal."
-      />
+      <BottomSection data={bottomData} />
     </>
   );
 };

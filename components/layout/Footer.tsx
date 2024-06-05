@@ -31,17 +31,16 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { href: "#", text: "Dog Food" },
-        { href: "#", text: "Cat Food" },
-        { href: "#", text: "Small Pet Food" },
-        { href: "#", text: "Treats" },
+        { href: "/dog", text: "Dog Food" },
+        { href: "/cat", text: "Cat Food" },
+        { href: "/small-pet", text: "Small Pet Food" },
       ],
     },
     {
       title: "Support",
       links: [
-        { href: "#", text: "Contact Us" },
-        { href: "#", text: "FAQ" },
+        { href: "/contact", text: "Contact Us" },
+        { href: "/faq", text: "FAQ" },
         { href: "#", text: "Shipping & Returns" },
       ],
     },
