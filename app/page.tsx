@@ -1,4 +1,3 @@
-"use client";
 import Hero from "../components/layout/Hero";
 import FeaturedProducts from "components/layout/FeaturedProducts";
 import { bottomSectionData } from "lib/bottomSectionData";

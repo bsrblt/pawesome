@@ -6,9 +6,9 @@ interface BackgroundProps {
 
 const Background: React.FC<BackgroundProps> = ({ children }) => {
   return (
-    <section className="bg-bermuda py-12 pt-4 md:py-24 relative">
+    <section className="bg-bermuda py-12 pt-20 md:py-24 relative">
       <div
-        className="absolute inset-0 opacity-10 z-0 bg-scroll"
+        className="absolute inset-0 opacity-10 z-0 bg-"
         style={{
           backgroundImage: "url('products1.jpg')",
           backgroundSize: "cover",

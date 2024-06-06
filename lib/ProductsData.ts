@@ -6,6 +6,7 @@ export interface Product {
   price: number;
   Category: string;
   type: string;
+  featured: string;
 }
 
 export const productsData: Product[] = [
@@ -17,6 +18,7 @@ export const productsData: Product[] = [
     price: 49.99,
     Category: "Dog",
     type: "Dry",
+    featured: "Yes",
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ export const productsData: Product[] = [
     price: 39.99,
     Category: "Dog",
     type: "Wet",
+    featured: "No",
   },
   {
     id: 3,
@@ -36,6 +39,7 @@ export const productsData: Product[] = [
     price: 26.99,
     Category: "Dog",
     type: "Dry",
+    featured: "No",
   },
   {
     id: 4,
@@ -46,6 +50,7 @@ export const productsData: Product[] = [
     price: 29.99,
     Category: "Dog",
     type: "Dry",
+    featured: "No",
   },
   {
     id: 5,
@@ -55,6 +60,7 @@ export const productsData: Product[] = [
     price: 49.99,
     Category: "Cat",
     type: "Dry",
+    featured: "Yes",
   },
   {
     id: 6,
@@ -64,6 +70,7 @@ export const productsData: Product[] = [
     price: 28.99,
     Category: "Cat",
     type: "Wet",
+    featured: "No",
   },
   {
     id: 7,
@@ -74,6 +81,7 @@ export const productsData: Product[] = [
     price: 27.99,
     Category: "Cat",
     type: "Dry",
+    featured: "No",
   },
   {
     id: 8,
@@ -84,6 +92,7 @@ export const productsData: Product[] = [
     price: 23.99,
     Category: "Cat",
     type: "Dry",
+    featured: "No",
   },
   {
     id: 9,
@@ -94,6 +103,7 @@ export const productsData: Product[] = [
     price: 14.99,
     Category: "Small Pet",
     type: "Dry",
+    featured: "Yes",
   },
   {
     id: 10,
@@ -103,6 +113,7 @@ export const productsData: Product[] = [
     price: 19.99,
     Category: "Small Pet",
     type: "Dry",
+    featured: "No",
   },
   {
     id: 11,
@@ -113,6 +124,7 @@ export const productsData: Product[] = [
     price: 19.99,
     Category: "Small Pet",
     type: "Treat",
+    featured: "No",
   },
   {
     id: 12,
@@ -123,6 +135,7 @@ export const productsData: Product[] = [
     price: 29.99,
     Category: "Small Pet",
     type: "Treat",
+    featured: "No",
   },
   {
     id: 13,
@@ -133,6 +146,7 @@ export const productsData: Product[] = [
     price: 29.99,
     Category: "Cat",
     type: "Wet",
+    featured: "No",
   },
   {
     id: 14,
@@ -143,5 +157,6 @@ export const productsData: Product[] = [
     price: 24.99,
     Category: "Dog",
     type: "Treat",
+    featured: "Yes",
   },
 ];

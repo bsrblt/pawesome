@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Card from "components/ui/Card";
+import Category from "./Category";
 
 const FeaturedProducts = () => {
   return (
@@ -17,32 +17,13 @@ const FeaturedProducts = () => {
             View All
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols- lg:grid-cols-4 gap-8">
-          <Card
-            imageSrc="/dogfood.jpg"
-            title="Premium Dry Dog Food"
-            description="High-quality protein and essential nutrients for your pup."
-            price={49.99}
-          />
-          <Card
-            imageSrc="/wetcat.jpg"
-            title="Wet Cat Food"
-            description="Delicious and nutritious wet food for your feline friend."
-            price={29.99}
-          />
-          <Card
-            imageSrc="/hamsterfood.jpg"
-            title="Hamster Food"
-            description="Highly nutritious munchies for your small furry friend."
-            price={14.99}
-          />
-          <Card
-            imageSrc="/treats.jpg"
-            title="Treats"
-            description="Healthy and delicious treats for your pet, no artifical sugar added."
-            price={9.99}
-          />
-        </div>
+        <Category
+          featured="Yes"
+          bottomDataKey="products"
+          showBackground={false}
+          showPageTitle={false}
+          showBottomSection={false}
+        />
       </div>
     </section>
   );

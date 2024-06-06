@@ -27,7 +27,7 @@ const SlideShow = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex < images.length - 1 ? prevIndex + 1 : 0
       );
-    }, 5000);
+    }, 4350);
 
     return () => clearInterval(interval);
   }, []);
