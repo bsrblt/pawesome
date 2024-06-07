@@ -64,7 +64,7 @@ const FAQ = () => {
                 ))}
               </section>
               <section className="my-3">
-                <Link
+                {/* <Link
                   href="/contact"
                   className="flex flex-col w-full h-16 items-center justify-center text-lg text-center pb-1"
                 >
@@ -75,7 +75,7 @@ const FAQ = () => {
                       &#39;ll return as soon as possible.
                     </h1>
                   </div>
-                </Link>
+                </Link> */}
               </section>
             </div>
           </div>
