@@ -1,6 +1,6 @@
 import React from "react";
 import FormField from "./FormField";
-import Button from "components/ui/Button";
+import Button from "./Button";
 
 interface ShippingFormProps {
   formData: {

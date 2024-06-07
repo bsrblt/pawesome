@@ -4,7 +4,7 @@ import FileUploadInput from "app/components/ui/FileUploadInput";
 import Button from "app/components/ui/Button";
 import FormField from "app/components/ui/FormField";
 import Image from "next/image";
-import petcare from "../public/petcare.jpg";
+import petcare from "../../public/petcare.jpg";
 import Background from "app/components/layout/Background";
 import { bottomSectionData } from "app/lib/bottomSectionData";
 import BottomSection from "app/components/layout/BottomSection";
