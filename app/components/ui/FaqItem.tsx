@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import down1 from "../../public/down1.svg";
+import down1 from "../../../public/down1.svg";
 
 interface FaqItemProps {
   question: string;
