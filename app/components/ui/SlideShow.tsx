@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import a1 from "../../public/a1.jpg";
-import a3 from "../../public/a3.jpg";
-import a6 from "../../public/a6.jpg";
-import a8 from "../../public/a8.jpg";
-import petfood from "../../public/petfood.png";
+import a1 from "public/a1.jpg";
+import a3 from "public/a3.jpg";
+import a6 from "public/a6.jpg";
+import a8 from "public/a8.jpg";
+import petfood from "public/petfood.png";
 
 const images = [
   { image: petfood, alt: "healthy pet food" },

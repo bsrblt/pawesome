@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import Button from "components/ui/Button";
-import FormField from "components/ui/FormField";
-import { bottomSectionData } from "lib/bottomSectionData";
-import BottomSection from "components/layout/BottomSection";
-import OfficeMap from "components/layout/OfficeMap";
-import Background from "components/layout/Background";
-import PageTitle from "components/ui/PageTitle";
+import Button from "app/components/ui/Button";
+import FormField from "app/components/ui/FormField";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
+import OfficeMap from "app/components/layout/OfficeMap";
+import Background from "app/components/layout/Background";
+import PageTitle from "app/components/ui/PageTitle";
 import Image from "next/image";
 import contactus from "public/contactus.jpg";
 

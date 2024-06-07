@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../ui/Button";
 import Link from "next/link";
 import Background from "./Background";
-import SlideShow from "components/ui/SlideShow";
+import SlideShow from "../ui/SlideShow";
 
 const Hero = () => {
   return (

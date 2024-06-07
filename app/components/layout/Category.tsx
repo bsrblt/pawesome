@@ -1,10 +1,10 @@
 import React from "react";
 import ProductList from "./ProductList";
-import { bottomSectionData } from "lib/bottomSectionData";
-import BottomSection from "components/layout/BottomSection";
-import Background from "components/layout/Background";
-import PageTitle from "components/ui/PageTitle";
-import { productsData } from "lib/ProductsData";
+import { bottomSectionData } from "../../lib/bottomSectionData";
+import BottomSection from "./BottomSection";
+import Background from "./Background";
+import PageTitle from "../ui/PageTitle";
+import { productsData } from "../../lib/ProductsData";
 
 interface CategoryProps {
   category?: string;

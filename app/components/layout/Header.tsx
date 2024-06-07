@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useContext } from "react";
 import { AnimatePresence } from "framer-motion";
-import HeaderLogo from "components/ui/HeaderLogo";
-import AccountMenu from "components/ui/AccountMenu";
-import Cart from "components/ui/Cart";
+import HeaderLogo from "../ui/HeaderLogo";
+import AccountMenu from "../ui/AccountMenu";
+import Cart from "../ui/Cart";
 import Navigation from "./Navigation";
-import useIsSmallScreen from "components/utils/hooks/useIsSmallScreen";
+import useIsSmallScreen from "../utils/hooks/useIsSmallScreen";
 import UserActions from "./UserActions";
-import CartContext from "store/CartContext";
+import CartContext from "app/store/CartContext";
 import { useRouter } from "next/navigation";
 import MobileNavigation from "./MobileNavigation";
 
@@ -74,9 +74,9 @@ const Header: React.FC = () => {
         if (showAccMenu) {
           accountToggler();
         }
-        // if (showCart) {
-        //   cartToggler();
-        // }
+        if (showCart) {
+          cartToggler();
+        }
         if (showSearch) {
           searchHandler();
         }

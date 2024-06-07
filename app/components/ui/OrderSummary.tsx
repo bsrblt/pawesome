@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { CartItem } from "lib/types";
+import { CartItem } from "components/lib/types";
 import MiniButton from "components/ui/MiniButton";
 import { MinusIcon, PlusIcon } from "components/ui/Icons";
-import CartContext from "store/CartContext";
+import CartContext from "components/store/CartContext";
 import Button from "./Button";
 import Link from "next/link";
 

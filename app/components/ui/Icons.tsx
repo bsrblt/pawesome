@@ -1,7 +1,7 @@
 import React from "react";
-import xmark from "../../public/xmark.svg";
-import plus from "../../public/plus.svg";
-import minus from "../../public/minus.svg";
+import xmark from "public/xmark.svg";
+import plus from "public/plus.svg";
+import minus from "public/minus.svg";
 import Image from "next/image";
 
 export const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (

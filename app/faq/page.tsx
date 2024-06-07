@@ -1,9 +1,9 @@
 import React from "react";
-import Background from "components/layout/Background";
-import PageTitle from "components/ui/PageTitle";
-import { bottomSectionData } from "lib/bottomSectionData";
-import BottomSection from "components/layout/BottomSection";
-import FaqItem from "components/ui/FaqItem";
+import Background from "app/components/layout/Background";
+import PageTitle from "app/components/ui/PageTitle";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
+import FaqItem from "app/components/ui/FaqItem";
 import Link from "next/link";
 
 const FAQ = () => {
@@ -54,7 +54,7 @@ const FAQ = () => {
           <PageTitle text="Frequently Asked Questions" />
           <div className="container z-10 relative">
             <div className="px-6  text-lemonlight bg-tahiti rounded-xl">
-              <div className="grid divide-y">
+              <section className="grid divide-y">
                 {faqs.map((faq) => (
                   <FaqItem
                     key={faq.id}
@@ -62,8 +62,8 @@ const FAQ = () => {
                     answer={faq.answer}
                   />
                 ))}
-              </div>
-              <div className="my-3">
+              </section>
+              <section className="my-3">
                 <Link
                   href="/contact"
                   className="flex flex-col w-full h-16 items-center justify-center text-lg text-center pb-1"
@@ -76,7 +76,7 @@ const FAQ = () => {
                     </h1>
                   </div>
                 </Link>
-              </div>
+              </section>
             </div>
           </div>
         </div>

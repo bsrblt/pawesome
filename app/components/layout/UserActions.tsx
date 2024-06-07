@@ -2,10 +2,10 @@
 import React, { useRef, useContext } from "react";
 import { AnimatePresence } from "framer-motion";
 import { SearchIcon, ShoppingCartIcon, UserIcon, MenuIcon } from "../ui/Icons";
-import MenuButton from "components/ui/MenuButton";
-import SearchBox from "components/ui/SearchBox";
-import CartContext from "store/CartContext";
-import useIsSmallScreen from "components/utils/hooks/useIsSmallScreen";
+import MenuButton from "../ui/MenuButton";
+import SearchBox from "../ui/SearchBox";
+import CartContext from "app/store/CartContext";
+import useIsSmallScreen from "../utils/hooks/useIsSmallScreen";
 
 interface UserActionsProps {
   menuToggler: () => void;

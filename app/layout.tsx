@@ -1,10 +1,10 @@
 import React, { ReactNode } from "react";
 import { Archivo, Lobster, Acme } from "next/font/google";
 import "./globals.css";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
-import { CartContextProvider } from "../store/CartContext";
-import SessionWrapper from "components/utils/SessionWrapper";
+import Header from "./components/layout/Header";
+import { CartContextProvider } from "./store/CartContext";
+import Footer from "./components/layout/Footer";
+import SessionWrapper from "./lib/SessionWrapper";
 
 const acme = Acme({
   weight: "400",

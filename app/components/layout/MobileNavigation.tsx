@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import NavLink, { MobileNavLink } from "components/ui/NavLink";
+import NavLink, { MobileNavLink } from "../../components/ui/NavLink";
 import { motion } from "framer-motion";
-import AuthButton from "components/ui/AuthButton";
+import AuthButton from "../ui/AuthButton";
 
 const MobileNavigation: React.FC<{
   showNavMenu: boolean;

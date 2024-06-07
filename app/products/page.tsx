@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import Card from "components/ui/Card";
-import { productsData, Product } from "lib/ProductsData";
-import ProductFilter from "components/ui/ProductFilter";
-import Button from "components/ui/Button";
-import { bottomSectionData } from "lib/bottomSectionData";
-import BottomSection from "components/layout/BottomSection";
-import Background from "components/layout/Background";
-import PageTitle from "components/ui/PageTitle";
+import Card from "app/components/ui/Card";
+import { productsData, Product } from "app/lib/ProductsData";
+import ProductFilter from "app/components/ui/ProductFilter";
+import Button from "app/components/ui/Button";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
+import Background from "app/components/layout/Background";
+import PageTitle from "app/components/ui/PageTitle";
 
 const Products: React.FC = () => {
   const bottomData = bottomSectionData.products;

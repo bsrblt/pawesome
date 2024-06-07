@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
-import Button from "components/ui/Button";
-import { CartItem } from "lib/types";
-import CartContext from "store/CartContext";
+import Button from "./Button";
+import { CartItem } from "../../lib/types";
+import CartContext from "app/store/CartContext";
 import { CloseIcon, MinusIcon, PlusIcon } from "./Icons";
 import MiniButton from "./MiniButton";
 import { useRouter } from "next/navigation";

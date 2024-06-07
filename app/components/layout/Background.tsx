@@ -10,7 +10,7 @@ const Background: React.FC<BackgroundProps> = ({ children }) => {
       <div
         className="absolute inset-0 opacity-10 z-0 bg-"
         style={{
-          backgroundImage: "url('products1.jpg')",
+          backgroundImage: "url('/products1.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

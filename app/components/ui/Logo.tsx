@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logonoback from "../../public/pawesome-high-resolution-logo-white-transparent.png";
+import logonoback from "public/pawesome-high-resolution-logo-white-transparent.png";
 
 const Logo = () => {
   return (

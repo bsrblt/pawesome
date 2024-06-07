@@ -1,17 +1,17 @@
 "use client";
 import React, { useContext, useState } from "react";
-import CartContext from "store/CartContext";
-import ShippingForm from "components/ui/ShippingForm";
-import OrderSummary from "components/ui/OrderSummary";
-import LoginForm from "components/ui/LoginForm";
-import SignUpForm from "components/ui/SignUpForm";
-import Background from "components/layout/Background";
-import PageTitle from "components/ui/PageTitle";
-import { bottomSectionData } from "lib/bottomSectionData";
-import BottomSection from "components/layout/BottomSection";
+import CartContext from "app/store/CartContext";
+import ShippingForm from "app/components/ui/ShippingForm";
+import OrderSummary from "app/components/ui/OrderSummary";
+import LoginForm from "app/components/ui/LoginForm";
+import SignUpForm from "app/components/ui/SignUpForm";
+import Background from "app/components/layout/Background";
+import PageTitle from "app/components/ui/PageTitle";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
 import Image from "next/image";
-import Discount from "components/ui/Discount";
-import WelcomeOrder from "components/ui/WelcomeOrder";
+import Discount from "app/components/ui/Discount";
+import WelcomeOrder from "app/components/ui/WelcomeOrder";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 const Checkout = () => {

@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import FileUploadInput from "components/ui/FileUploadInput";
-import Button from "components/ui/Button";
-import FormField from "components/ui/FormField";
+import FileUploadInput from "app/components/ui/FileUploadInput";
+import Button from "app/components/ui/Button";
+import FormField from "app/components/ui/FormField";
 import Image from "next/image";
-import petcare from "../../public/petcare.jpg";
-import Background from "components/layout/Background";
-import { bottomSectionData } from "lib/bottomSectionData";
-import BottomSection from "components/layout/BottomSection";
+import petcare from "../public/petcare.jpg";
+import Background from "app/components/layout/Background";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
 
 const Careers = () => {
   const bottomData = bottomSectionData.careers;

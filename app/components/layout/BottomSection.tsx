@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Logo from "components/ui/Logo";
-import Button from "components/ui/Button";
+import Logo from "../ui/Logo";
+import Button from "../ui/Button";
 
 interface BottomSectionProps {
   data: {
@@ -32,7 +32,7 @@ const BottomSection: React.FC<BottomSectionProps> = ({ data }) => {
         <p className="text-gray-600 md:text-lg text-sm mb-8 text-justify">
           {data.desc}
         </p>
-        <div className="flex gap-5 justify-center">
+        <div className="flex gap-5 justify-center w-[100%]">
           <Link href={data.href1}>
             <Button setWidth="8.57rem">{data.button1Text}</Button>
           </Link>

@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="flex flex-col h-[24rem] bg-tahiti/20 rounded-xl border border-bermuda/5">
-      <Link href={`/product/${id}`}>
+      <Link href={`/`}>
         <Image
           alt={title ?? "No Title"}
           className="rounded-t-xl mb-1 border-b-4 border-b-darkpur cursor-pointer hover:shadow-md transition-all duration-300"
@@ -33,7 +33,12 @@ const Card: React.FC<CardProps> = ({
           width={600}
         />
       </Link>
-      <CardContent title={title} description={description} price={price} />
+      <CardContent
+        id={id.toString()}
+        title={title}
+        description={description}
+        price={price}
+      />
     </div>
   );
 };

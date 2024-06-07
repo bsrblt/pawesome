@@ -1,5 +1,5 @@
 import React from "react";
-import NavLink from "components/ui/NavLink";
+import NavLink from "../ui/NavLink";
 
 const Navigation: React.FC = () => {
   return (
