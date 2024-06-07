@@ -34,9 +34,7 @@ const Careers = () => {
   );
   const emailInput = (
     <div className="flex items-center justify-between gap-4 p-1 mb-1 min-w-[15rem]">
-      <label className="block text-sm font-medium text-darkpur fontpop-3">
-        E-mail
-      </label>
+      <label className="block text-sm font-medium text-darkpur">E-mail</label>
       <FormField
         label=""
         name="email"
