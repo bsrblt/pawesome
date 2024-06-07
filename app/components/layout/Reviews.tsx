@@ -62,7 +62,7 @@ const Reviews: React.FC<ReviewsProps> = ({ productId }) => {
         <span className="text-lg font-semibold">
           Average Score: {averageScore.toFixed(1)}
         </span>
-        <div className="font-bold text-xl">
+        <div className="font-bold text-5xl">
           {[...Array(5)].map((_, index) => (
             <span key={index} className="text-yellow-400">
               ★
