@@ -74,9 +74,9 @@ const Header: React.FC = () => {
         if (showAccMenu) {
           accountToggler();
         }
-        if (showCart) {
-          cartToggler();
-        }
+        // if (showCart) {
+        //   cartToggler();
+        // }
         if (showSearch) {
           searchHandler();
         }

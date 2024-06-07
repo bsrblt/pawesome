@@ -15,7 +15,7 @@ interface CardContentProps {
 const CardContent: React.FC<CardContentProps> = ({
   id,
   title,
-  description,
+  // description,
   price,
 }) => {
   const cartCtx = useContext(CartContext);
@@ -23,7 +23,7 @@ const CardContent: React.FC<CardContentProps> = ({
   const addToCartHandler = () => {
     if (title && price !== undefined) {
       const item: CartItem = {
-        id: title,
+        id: id,
         title,
         price,
         quantity: 1,
@@ -33,24 +33,21 @@ const CardContent: React.FC<CardContentProps> = ({
   };
 
   return (
-    <div className="flex flex-col pb-1 justify-between items-stretch">
-      <section>
+    <div className="flex pb-1 justify-between items-center">
+      {/* <section className="">
         <Link href={`/products/${id}`}>
-          <h3 className="text-lg font-bold text-darkpur cursor-pointer">
+          <h3 className="text-lg font-bold text-darkpur/80 cursor-pointer">
             {title}
           </h3>
+          <p className="text-darkpur text-xl mb-4">{description}</p>
         </Link>
-
-        <p className="text-darkpur mb-4">{description}</p>
-      </section>
-      <div className="flex items-center justify-between">
-        <span className="text-primary font-bold text-lg">
-          {price ? "$" : null}
-          {price}
-        </span>
-        <div className="mb-1">
-          <Button onClick={addToCartHandler}>Add to Cart</Button>
-        </div>
+      </section> */}
+      <span className="text-primary font-bold text-lg">
+        {price ? "$" : null}
+        {price}
+      </span>
+      <div className="mb-1 -mr-4">
+        <Button onClick={addToCartHandler}>Add to Cart</Button>
       </div>
     </div>
   );

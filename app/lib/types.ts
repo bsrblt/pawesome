@@ -22,4 +22,8 @@ export interface Product {
   price: number;
   Category: string;
   type: string;
+  featured: string;
+  nutritionValues: {
+    [key: string]: string;
+  };
 }

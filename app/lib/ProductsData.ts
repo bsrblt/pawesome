@@ -17,7 +17,8 @@ export const productsData: Product[] = [
     id: 1,
     imageSrc: "/dogfood.jpg",
     title: "Premium Dry Dog Food",
-    description: "High-quality protein and essential nutrients for your pup.",
+    description:
+      "High-quality protein and all the essential nutrients for your little pup.",
     price: 49.99,
     Category: "Dog",
     type: "Dry",
@@ -34,7 +35,8 @@ export const productsData: Product[] = [
     id: 2,
     imageSrc: "/dogfoodwet.jpg",
     title: "Wet Dog Food",
-    description: "Delicious and nutritious Wet food for your canine friend.",
+    description:
+      "Delicious, nutritious and now with extra flavor! Wet food for your canine friend.",
     price: 39.99,
     Category: "Dog",
     type: "Wet",
@@ -52,7 +54,7 @@ export const productsData: Product[] = [
     imageSrc: "/dogfood3.jpg",
     title: "Puppy Food",
     description:
-      "Specially formulated and highly nutritious for growing puppies.",
+      "Specially formulated and highly nutritious for all kinds of growing puppies.",
     price: 26.99,
     Category: "Dog",
     type: "Dry",

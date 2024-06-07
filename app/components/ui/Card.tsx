@@ -19,11 +19,11 @@ const Card: React.FC<CardProps> = ({
   price,
 }) => {
   return (
-    <div className="flex flex-col h-[24rem] bg-tahiti/20 rounded-xl border border-bermuda/5">
-      <Link href={`/`}>
+    <div className="flex flex-col justify-between bg-tahiti/20 rounded-xl border border-bermuda/5 z-20">
+      <Link href={`/products/${id}`}>
         <Image
           alt={title ?? "No Title"}
-          className="rounded-t-xl mb-1 border-b-4 border-b-darkpur cursor-pointer hover:shadow-md transition-all duration-300"
+          className="rounded-t-xl mb-1 border-b-4 border-b-darkpur cursor-pointer hover:shadow-md transition-all duration-300 z-10"
           height={200}
           src={imageSrc || "/default-image.png"}
           style={{
@@ -32,6 +32,10 @@ const Card: React.FC<CardProps> = ({
           }}
           width={600}
         />
+        <h3 className="text-lg font-bold text-darkpur/80 cursor-pointer">
+          {title}
+        </h3>
+        <p className="text-darkpur text-xl mb-4">{description}</p>
       </Link>
       <CardContent
         id={id.toString()}
