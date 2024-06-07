@@ -37,7 +37,7 @@ const ProductPage: React.FC = () => {
           />
 
           <section className="grid sm:p-4 justify-between text-xl gap-8 mt-1">
-            <h3>{product.description}</h3>
+            <h3 className="sm:mt-0 -mt-4">{product.description}</h3>
             <div className="px-2">
               <CardContent
                 id={product.id.toString()}

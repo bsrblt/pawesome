@@ -46,7 +46,7 @@ const CardContent: React.FC<CardContentProps> = ({
         {price ? "$" : null}
         {price}
       </span>
-      <div className="mb-1 -mr-4">
+      <div className="mb-1">
         <Button onClick={addToCartHandler}>Add to Cart</Button>
       </div>
     </div>
