@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Modal from "../ui/Modal";
+import Modal from "../ui/AddReview";
 import { useSession } from "next-auth/react";
 import {
   Review,
@@ -14,6 +14,7 @@ interface ReviewsProps {
 
 const Reviews: React.FC<ReviewsProps> = ({ productId }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { data: session } = useSession();
   const isLoggedIn = !!session?.user;
 
@@ -60,9 +61,9 @@ const Reviews: React.FC<ReviewsProps> = ({ productId }) => {
       <h2 className="text-2xl font-bold mb-4">Reviews</h2>
       <div className="grid items-center mb-4">
         <span className="text-lg font-semibold">
-          Average Score: {averageScore.toFixed(1)}
+          Average: {averageScore.toFixed(1)}
         </span>
-        <div className="font-bold text-5xl">
+        <div className="font-bold text-2xl">
           {[...Array(5)].map((_, index) => (
             <span key={index} className="text-yellow-400">
               ★

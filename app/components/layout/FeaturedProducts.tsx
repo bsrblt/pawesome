@@ -17,13 +17,15 @@ const FeaturedProducts = () => {
             View All
           </Link>
         </div>
-        <Category
-          featured="Yes"
-          bottomDataKey="products"
-          showBackground={false}
-          showPageTitle={false}
-          showBottomSection={false}
-        />
+        <div className="w-full bg-emerald/10 border-x-8 border-turq/80 rounded-xl">
+          <Category
+            featured="Yes"
+            bottomDataKey="products"
+            showBackground={false}
+            showPageTitle={false}
+            showBottomSection={false}
+          />
+        </div>
       </div>
     </section>
   );

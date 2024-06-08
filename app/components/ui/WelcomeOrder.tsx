@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import MiniButton from "./MiniButton";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 interface WelcomeOrderProps {
   onSubmit?: () => void;
@@ -56,9 +57,16 @@ const WelcomeOrder: React.FC<WelcomeOrderProps> = ({
 
   return (
     <div className="border-turq rounded-xl border-8 p-3 bg-turq/90 shadow-sh lg:min-h-[420px]">
-      <h2 className="text-2xl font-bold text-gray-700 mb-6">
-        {`Welcome, ${session?.data?.user?.name}`}
-      </h2>
+      <section className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-gray-700 mb-6">
+          {`Welcome, ${session?.data?.user?.name}`}
+        </h2>
+        <img
+          alt="userAvatar"
+          src={session?.data?.user?.image ?? "/default-avatar.png"}
+          className="rounded-[3rem]"
+        />
+      </section>
       <div className="flex gap-1 justify-start text-sm mb-[20px]">
         <p>Not you?</p>
         <p
@@ -68,7 +76,6 @@ const WelcomeOrder: React.FC<WelcomeOrderProps> = ({
           Log out.
         </p>
       </div>
-
       <form onSubmit={handleSubmit}>
         <div id="addresses" className="mt-4">
           <div className="mb-4">
@@ -108,7 +115,6 @@ const WelcomeOrder: React.FC<WelcomeOrderProps> = ({
           </div>
         </div>
       </form>
-
       {showTermsModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded-lg">
@@ -117,16 +123,19 @@ const WelcomeOrder: React.FC<WelcomeOrderProps> = ({
             </h3>
             <p className="text-sm sm:w-[28rem] w-[15rem] mb-4 text-justify">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
-              tempore veniam! Sit ratione blanditiis amet unde, illum inventore
-              incidunt voluptas dignissimos sint, numquam cupiditate magni
-              sapiente fuga repellendus esse labore? Delectus, recusandae?
-              Facilis dolor repellendus expedita cum facere maxime et ratione
-              repudiandae nobis provident? Totam corporis ut quod repellendus
-              natus tempora at, corrupti, inventore ratione illo molestias
-              obcaecati sequi minima. Voluptas suscipit necessitatibus
-              asperiores architecto fugit dolorum odio. Veniam dignissimos
-              exercitationem, iure necessitatibus amet accusantium delectus at
-              alias odio corporis. Aliquid quibusdam eveniet quaerat
+              tempore veniam! Sit ratione babanızı yalayacağız blanditiis amet
+              unde, illum inventore incidunt voluptas dignissimos sint, numquam
+              cupiditate magni sapiente fuga babanızı yalayacağız repellendus
+              esse labore? Delectus, recusandae? Facilis dolor repellendus
+              expedita cum facere maxime et ratione repudiandae nobis provident?
+              babanızı yalayacağız Totam corporis ut quod repellendus natus
+              tempora at, corrupti, inventore ratione illo molestias obcaecati
+              sequi minima. Voluptas suscipit babanızı yalayacağız
+              necessitatibus asperiores architecto fugit babanızı yalayacağız
+              dolorum odio. Veniam dignissimos exercitationem, babanızı
+              yalayacağız iure necessitatibus amet babanızı yalayacağız
+              accusantium delectus at alias odio corporis. Aliquid babanızı
+              yalayacağız quibusdam eveniet babanızı yalayacağız quaerat
               consequuntur. Quidem ea voluptates minus debitis.
             </p>
             <span className="flex justify-center">
@@ -137,7 +146,6 @@ const WelcomeOrder: React.FC<WelcomeOrderProps> = ({
           </div>
         </div>
       )}
-
       {showAddressModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/60">
           <div className="bg-white p-4 rounded-lg">

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FormField from "./FormField";
 import Button from "./Button";
 import GoogleButton from "./GoogleButton";
-import { signIn /* signOut, useSession */ } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface LoginFormProps {
   onSubmit?: () => void;
@@ -15,10 +16,23 @@ const LoginForm: React.FC<LoginFormProps> = ({
   onNoAcc = () => {},
   onNoJoin = () => {},
 }) => {
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     onSubmit();
   };
+
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  const handleSignIn = async () => {
+    await signIn("google", { callbackUrl: "/checkout" });
+  };
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.replace("/checkout");
+    }
+  }, [status, router]);
 
   return (
     <div className="border-turq rounded-xl border-8 p-3 bg-turq/90 shadow-sh lg:max-h-[420px]">
@@ -35,7 +49,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
 
       <form onSubmit={handleSubmit}>
         <span className="grid gap-4 justify-start">
-          <GoogleButton onClick={signIn} />
+          <GoogleButton onClick={handleSignIn} />
           or continue with your username.
         </span>
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import CartContext from "app/store/CartContext";
 import ShippingForm from "app/components/ui/ShippingForm";
 import OrderSummary from "app/components/ui/OrderSummary";
@@ -12,7 +12,7 @@ import BottomSection from "app/components/layout/BottomSection";
 import Image from "next/image";
 import Discount from "app/components/ui/Discount";
 import WelcomeOrder from "app/components/ui/WelcomeOrder";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const Checkout = () => {
   const { items, totalAmount, totalItemsQuantity, clearCart } =
@@ -33,6 +33,9 @@ const Checkout = () => {
   const [isSigningUp, setIsSigningUp] = useState(false);
   const [notJoining, setNotJoining] = useState(false);
   const [discount, setDiscount] = useState(0);
+  const [, setForceUpdate] = useState(false);
+
+  const validUser = isLoggedIn || session?.data?.user;
 
   const shippingCost = totalItemsQuantity > 0 ? 4.99 : 0.0;
 
@@ -70,6 +73,13 @@ const Checkout = () => {
     setIsMember(true);
     setIsLoggedIn(false);
   };
+
+  useEffect(() => {
+    if (validUser)
+      return () => {
+        setForceUpdate(true);
+      };
+  }, []);
 
   return (
     <>
@@ -114,12 +124,12 @@ const Checkout = () => {
                     handleInputChange={handleInputChange}
                     handleFormSubmit={handleFormSubmit}
                   />
-                ) : isMember && !isLoggedIn ? (
+                ) : isMember && !validUser ? (
                   <LoginForm
                     onNoAcc={newUserHandler}
                     onNoJoin={noJoinHandler}
                   />
-                ) : (isMember && session) || isLoggedIn ? (
+                ) : validUser ? (
                   <WelcomeOrder
                     onNoAcc={newUserHandler}
                     onNoJoin={noJoinHandler}

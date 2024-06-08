@@ -6,6 +6,7 @@ import MenuButton from "../ui/MenuButton";
 import SearchBox from "../ui/SearchBox";
 import CartContext from "app/store/CartContext";
 import useIsSmallScreen from "../utils/hooks/useIsSmallScreen";
+// import { signOut } from "next-auth/react";
 
 interface UserActionsProps {
   menuToggler: () => void;
@@ -55,6 +56,9 @@ const UserActions: React.FC<UserActionsProps> = ({
           onClick={accountToggler}
         />
       )}
+      {/* <button onClick={() => signOut()} className="ml-4 text-white">
+        Sign Out
+      </button> */}
     </div>
   );
 };

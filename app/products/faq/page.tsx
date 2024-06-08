@@ -1,9 +1,9 @@
 import React from "react";
-import Background from "../../app/components/layout/Background";
-import PageTitle from "../../app/components/ui/PageTitle";
-import { bottomSectionData } from "../../app/lib/bottomSectionData";
-import BottomSection from "../../app/components/layout/BottomSection";
-import FaqItem from "../../app/components/ui/FaqItem";
+import Background from "app/components/layout/Background";
+import PageTitle from "app/components/ui/PageTitle";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
+import FaqItem from "app/components/ui/FaqItem";
 import Link from "next/link";
 
 const FAQ = () => {
