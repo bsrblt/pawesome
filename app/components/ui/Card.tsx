@@ -35,7 +35,7 @@ const Card: React.FC<CardProps> = ({
         <h3 className="text-lg font-bold text-darkpur/80 cursor-pointer">
           {title}
         </h3>
-        <p className="text-darkpur text-xl mb-4">{description}</p>
+        <p className="text-darkpur text-md mb-4">{description}</p>
       </Link>
       <CardContent
         id={id.toString()}

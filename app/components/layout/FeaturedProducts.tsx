@@ -17,7 +17,7 @@ const FeaturedProducts = () => {
             View All
           </Link>
         </div>
-        <div className="w-full bg-emerald/10 border-x-8 border-turq/80 rounded-xl">
+        <div className="w-full bg-emerald/10 md:border-x-8 md:border-turq/80 rounded-xl">
           <Category
             featured="Yes"
             bottomDataKey="products"
