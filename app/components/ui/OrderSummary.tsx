@@ -5,6 +5,7 @@ import { MinusIcon, PlusIcon } from "app/components/ui/Icons";
 import CartContext from "app/store/CartContext";
 import Button from "./Button";
 import Link from "next/link";
+import calculatePrice from "../utils/priceCalculator";
 
 interface OrderSummaryProps {
   items: CartItem[];
@@ -21,9 +22,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
 }) => {
   const { addItem, removeItem } = useContext(CartContext);
 
-  const discountAmount = totalAmount * discount;
-  const applyShippingCost = totalAmount <= 100 ? shippingCost : 0;
-  const finalTotal = totalAmount - discountAmount + applyShippingCost;
+  const { finalTotal, discountAmount } = calculatePrice(
+    totalAmount,
+    discount,
+    shippingCost
+  );
 
   return (
     <div className="border-turq rounded-xl border-8 p-3 bg-white/90 shadow-sh h-full max-h-[688px] min-h-[250px] overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col justify-between transition-all duration-500">
@@ -80,6 +83,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
             <p className="text-darkpur/90">${totalAmount.toFixed(2)}</p>
           </div>
         </h3>
+
         {totalAmount <= 100 ? (
           <h3 className="text-xl font-bold text-gray-700">
             <div className="flex justify-between w-full border-darkpur border-b-[1px]">
@@ -97,14 +101,14 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
         {discount > 0 && (
           <h3 className="text-xl font-bold text-gray-700">
             <div className="flex justify-between w-full border-darkpur border-b-[1px] text-tahiti">
-              <p>Discount: </p>$-{discountAmount.toFixed(2)}
+              <p>Discount: </p>$-{discountAmount}
             </div>
           </h3>
         )}
         <br />
         <h3 className="text-xl font-bold text-gray-700">
           <div className="flex justify-between w-full border-darkpur border-b-[1px]">
-            <p>Total: </p>${finalTotal.toFixed(2)}
+            <p>Total: </p>${finalTotal}
           </div>
         </h3>
       </div>

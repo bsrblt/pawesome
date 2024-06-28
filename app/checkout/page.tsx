@@ -15,8 +15,14 @@ import WelcomeOrder from "app/components/ui/WelcomeOrder";
 import { useSession } from "next-auth/react";
 
 const Checkout = () => {
-  const { items, totalAmount, totalItemsQuantity, clearCart } =
-    useContext(CartContext);
+  const {
+    items,
+    totalAmount,
+    totalItemsQuantity,
+    clearCart,
+    discount,
+    applyDiscount,
+  } = useContext(CartContext);
   const session = useSession();
   const bottomData = bottomSectionData.checkout;
   const [formData, setFormData] = useState({
@@ -32,7 +38,6 @@ const Checkout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSigningUp, setIsSigningUp] = useState(false);
   const [notJoining, setNotJoining] = useState(false);
-  const [discount, setDiscount] = useState(0);
   const [, setForceUpdate] = useState(false);
 
   const validUser = isLoggedIn || session?.data?.user;
@@ -79,7 +84,7 @@ const Checkout = () => {
       return () => {
         setForceUpdate(true);
       };
-  }, []);
+  }, [validUser]);
 
   return (
     <>
@@ -103,7 +108,7 @@ const Checkout = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto">
-              <Discount onDiscountApply={(discount) => setDiscount(discount)} />
+              <Discount onDiscountApply={applyDiscount} />
               <div
                 className={`h-full z-0 ${
                   isMember ? "max-h-[420px]" : ""

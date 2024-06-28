@@ -1,10 +1,9 @@
 import React from "react";
-import Background from "../../app/components/layout/Background";
-import PageTitle from "../../app/components/ui/PageTitle";
-import { bottomSectionData } from "../../app/lib/bottomSectionData";
-import BottomSection from "../../app/components/layout/BottomSection";
-import FaqItem from "../../app/components/ui/FaqItem";
-import Link from "next/link";
+import Background from "app/components/layout/Background";
+import PageTitle from "app/components/ui/PageTitle";
+import { bottomSectionData } from "app/lib/bottomSectionData";
+import BottomSection from "app/components/layout/BottomSection";
+import FaqItem from "app/components/ui/FaqItem";
 
 const FAQ = () => {
   const bottomData = bottomSectionData.faq;
@@ -62,20 +61,6 @@ const FAQ = () => {
                     answer={faq.answer}
                   />
                 ))}
-              </section>
-              <section className="my-3">
-                {/* <Link
-                  href="/contact"
-                  className="flex flex-col w-full h-16 items-center justify-center text-lg text-center pb-1"
-                >
-                  <div className="w-[100%]">
-                    <h1 className=" block sm:text-xl text-[0.95rem] font-bold text-center drop-shadow-lg text-gray-200 mt-3 leading-relaxed">
-                      Not listed here?{" "}
-                      <span className="text-darkpur ">Contact us</span> and we
-                      &#39;ll return as soon as possible.
-                    </h1>
-                  </div>
-                </Link> */}
               </section>
             </div>
           </div>

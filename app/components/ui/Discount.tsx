@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import FormField from "./FormField";
+import CartContext from "app/store/CartContext";
 
 interface DiscountProps {
   onDiscountApply: (discount: number) => void;
@@ -40,6 +41,7 @@ const Discount: React.FC<DiscountProps> = ({ onDiscountApply }) => {
       setCodeAppliedSuccessfully(true);
       setDiscountApplied(true);
       onDiscountApply(0.1);
+      CartContext;
     }
   };
 
@@ -81,7 +83,9 @@ const Discount: React.FC<DiscountProps> = ({ onDiscountApply }) => {
             )}
             <p
               className={`text-sm relative mt-3 sm:ml-0 ml-2 ${
-                codeAppliedSuccessfully ? "text-darkpur/80 font-bold" : ""
+                codeApplied && codeAppliedSuccessfully
+                  ? "text-darkpur/80 font-bold"
+                  : ""
               }`}
             >
               {codeMessage}

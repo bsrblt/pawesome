@@ -28,7 +28,7 @@ const Logo = () => {
         alt="logo"
         src={logonoback}
         className="rounded-2xl p-4"
-        width={320}
+        width={300}
       />
     </div>
   );

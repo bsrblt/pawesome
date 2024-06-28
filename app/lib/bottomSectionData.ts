@@ -1,3 +1,5 @@
+import OurMission from "app/our-mission/page";
+
 export interface BottomSectionData {
   [key: string]: {
     href1: string;
@@ -100,6 +102,30 @@ export const bottomSectionData = {
   },
   contact: {
     href1: "/products",
+    button1Text: "Products",
+    href2: "/",
+    button2Text: "Home",
+    title: "Get in Touch",
+    desc: "Have questions or feedback? We're here to help! Our team is dedicated to providing excellent customer service and support. Whether you need assistance with our products, have inquiries about orders, or simply want to share your experience, feel free to reach out to us. We value your input and strive to ensure your satisfaction. Contact us today, and let us assist you in any way we can.",
+  },
+  ourStory: {
+    href1: "/our-story",
+    button1Text: "Products",
+    href2: "/",
+    button2Text: "Home",
+    title: "Get in Touch",
+    desc: "Have questions or feedback? We're here to help! Our team is dedicated to providing excellent customer service and support. Whether you need assistance with our products, have inquiries about orders, or simply want to share your experience, feel free to reach out to us. We value your input and strive to ensure your satisfaction. Contact us today, and let us assist you in any way we can.",
+  },
+  ourMission: {
+    href1: "/our-mission",
+    button1Text: "Products",
+    href2: "/",
+    button2Text: "Home",
+    title: "Get in Touch",
+    desc: "Have questions or feedback? We're here to help! Our team is dedicated to providing excellent customer service and support. Whether you need assistance with our products, have inquiries about orders, or simply want to share your experience, feel free to reach out to us. We value your input and strive to ensure your satisfaction. Contact us today, and let us assist you in any way we can.",
+  },
+  shippingReturns: {
+    href1: "/shipping-returns",
     button1Text: "Products",
     href2: "/",
     button2Text: "Home",

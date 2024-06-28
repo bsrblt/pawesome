@@ -21,14 +21,21 @@ const Cart: React.FC<CartProps> = ({
   onClear,
 }) => {
   const router = useRouter();
-  const { items, totalAmount, totalItemsQuantity, addItem, removeItem } =
-    useContext(CartContext);
+  const {
+    items,
+    totalAmount,
+    discount,
+    totalItemsQuantity,
+    addItem,
+    removeItem,
+  } = useContext(CartContext);
   const [showClearPrompt, setShowClearPrompt] = useState(false);
 
   const freeShippingThreshold = 100.0;
   const shippingCost =
     totalItemsQuantity > 0 && totalAmount < freeShippingThreshold ? 4.99 : 0.0;
-  const finalTotal = totalAmount + shippingCost;
+  const discountAmount = totalAmount * discount;
+  const finalTotal = totalAmount * (1 - discount) + shippingCost;
 
   const handleClearClick = () => {
     totalItemsQuantity > 0
@@ -54,7 +61,9 @@ const Cart: React.FC<CartProps> = ({
       transition={{ duration: 0.25 }}
     >
       <div className="flex items-center justify-between mx-4">
-        <h1 className="pt-2 text-rosy font-semibold">YOUR CART</h1>
+        <h1 className="pt-2 text-rosy font-semibold">
+          YOUR CART {totalItemsQuantity > 0 ? null : "IS EMPTY"}
+        </h1>
         <MiniButton onClick={onClose} type="button">
           <CloseIcon />
         </MiniButton>
@@ -100,8 +109,15 @@ const Cart: React.FC<CartProps> = ({
       )}
 
       <div className="text-lemonlight text-md font-bold my-2">
-        <h2>Shipping: ${shippingCost.toFixed(2)}</h2>
-        <h2 className="text-xl">Total: ${finalTotal.toFixed(2)}</h2>
+        {totalItemsQuantity > 0 ? (
+          <h2>Shipping: ${shippingCost.toFixed(2)}</h2>
+        ) : null}
+        {totalItemsQuantity > 0 ? (
+          <h2 className="text-md">Discount: -${discountAmount.toFixed(2)}</h2>
+        ) : null}
+        {totalItemsQuantity > 0 ? (
+          <h2 className="text-xl mt-2">Total: ${finalTotal.toFixed(2)}</h2>
+        ) : null}
       </div>
 
       <div className="flex justify-center items-end pl-4 mb-1 gap-4">

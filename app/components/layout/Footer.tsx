@@ -23,8 +23,8 @@ const Footer = () => {
     {
       title: "About",
       links: [
-        { href: "#", text: "Our Story" },
-        { href: "#", text: "Our Mission" },
+        { href: "/our-story", text: "Our Story" },
+        { href: "/our-mission", text: "Our Mission" },
         { href: "/careers", text: "Careers" },
       ],
     },
@@ -41,7 +41,7 @@ const Footer = () => {
       links: [
         { href: "/contact", text: "Contact Us" },
         { href: "/faq", text: "FAQ" },
-        { href: "#", text: "Shipping & Returns" },
+        { href: "/shipping-returns", text: "Shipping & Returns" },
       ],
     },
   ];

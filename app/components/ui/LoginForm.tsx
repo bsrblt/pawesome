@@ -50,10 +50,10 @@ const LoginForm: React.FC<LoginFormProps> = ({
       <form onSubmit={handleSubmit}>
         <span className="grid gap-4 justify-start">
           <GoogleButton onClick={handleSignIn} />
-          or continue with your username.
+          or enter your account details:
         </span>
 
-        <div className="grid grid-cols-2 gap-6 mt-4">
+        <div className="grid lg:grid-cols-2 gap-6 mt-4">
           <div>
             <FormField
               label="Username"

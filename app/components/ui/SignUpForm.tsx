@@ -126,9 +126,9 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       >
         <div>
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 items-end md:gap-4 md:mb-2">
+            <div className="flex flex-col-reverse md:gap-4">
               {username}
-              <div className="flex gap-1 mt-12 text-sm">
+              <div className="flex gap-1 mt-2 text-sm">
                 <p> Already a member? </p>
                 <p
                   className="text-darkpur font-bold cursor-pointer z-30"
@@ -138,7 +138,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 items-end gap-4 mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-end gap-4 my-2">
               {password}
               {confirmPassword}
             </div>
