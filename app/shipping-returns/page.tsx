@@ -24,20 +24,20 @@ const ShippingReturns = () => {
                     width={330}
                   />
                   <p className="text-lg mt-1 max-w-[90rem] leading-loose text-justify">
-                    We offer reliable shipping services to ensure your pet's
-                    food and supplies arrive safely and on time. Standard
-                    shipping within the United States typically takes 3-5
-                    business days for delivery. Orders over $100 qualify for
-                    free shipping, otherwise, a flat rate of $4.99 applies.
-                    Currently, we only ship within the United States, but we are
-                    working to expand our shipping options to serve more pet
-                    owners worldwide. If you are unsatisfied with your purchase,
-                    we offer a 30-day return policy for unopened products.
-                    Please contact our customer service team for assistance with
-                    returns or exchanges. Our goal is to provide exceptional
-                    customer service and ensure your pet's happiness with every
-                    order. We are dedicated to sustainable practices and
-                    prioritize environmentally friendly packaging materials.
+                    We offer reliable shipping services to ensure your pet food
+                    and supplies arrive safely and on time. Standard shipping
+                    within the United States typically takes 3-5 business days
+                    for delivery. Orders over $100 qualify for free shipping,
+                    otherwise, a flat rate of $4.99 applies. Currently, we only
+                    ship within the United States, but we are working to expand
+                    our shipping options to serve more pet owners worldwide. If
+                    you are unsatisfied with your purchase, we offer a 30-day
+                    return policy for unopened products. Please contact our
+                    customer service team for assistance with returns or
+                    exchanges. Our goal is to provide exceptional customer
+                    service and ensure pet happiness with every order. We are
+                    dedicated to sustainable practices and prioritize
+                    environmentally friendly packaging materials.
                   </p>
                 </div>
               </section>
